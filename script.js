@@ -1,4 +1,16 @@
 /* ──────────────────────────────────────────
+   Loading Splash — Handle dismissal
+────────────────────────────────────────── */
+window.addEventListener("load", () => {
+  const splash = document.getElementById("loading-splash");
+  if (splash) {
+    splash.style.opacity = "0";
+    splash.style.visibility = "hidden";
+    setTimeout(() => splash.remove(), 600);
+  }
+});
+
+/* ──────────────────────────────────────────
    Sticky nav — scroll detection + hamburger
 ────────────────────────────────────────── */
 (function initNav() {
@@ -66,11 +78,11 @@
 
       <div class="modal-hero-slider">
         <div class="modal-slider-track">
-          <img class="modal-hero-img" src="${room.img}" alt="${room.name}" loading="lazy" />
+          <img class="modal-hero-img" src="${room.img}" alt="${room.name}" width="800" height="600" loading="lazy" decoding="async" />
           ${(room.extraImgs || [])
             .map(
               (img) =>
-                `<img class="modal-hero-img" src="${img}" alt="${room.name} details" loading="lazy" />`
+                `<img class="modal-hero-img" src="${img}" alt="${room.name} details" width="800" height="600" loading="lazy" decoding="async" />`
             )
             .join("")}
         </div>
@@ -427,8 +439,54 @@
   stage.addEventListener("mouseenter", stopAuto);
   stage.addEventListener("mouseleave", startAuto);
 
+  // Export startAuto to global for IntersectionObserver
+  window._startReelsAuto = startAuto;
+
   render();
-  startAuto();
+  // startAuto(); // Will be started by IntersectionObserver
+})();
+
+/* ──────────────────────────────────────────
+   Intersection Observer for Performance
+   – Initialize heavy components only when near view
+   – Trigger animations more efficiently
+────────────────────────────────────────── */
+(function initPerformanceObserver() {
+  const animatedElements = document.querySelectorAll('[data-animate]');
+  const reelsSection = document.getElementById('reels');
+  
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px 100px 0px" // Start a bit before they come into view
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Handle animations
+        if (entry.target.hasAttribute('data-animate')) {
+          entry.target.style.animationPlayState = 'running';
+        }
+        
+        // Handle Reels section
+        if (entry.target.id === 'reels') {
+          if (window._startReelsAuto) {
+            window._startReelsAuto();
+            delete window._startReelsAuto; // Only needs to start once
+          }
+        }
+        
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  animatedElements.forEach(el => {
+    el.style.animationPlayState = 'paused';
+    observer.observe(el);
+  });
+  
+  if (reelsSection) observer.observe(reelsSection);
 })();
 
 /* ──────────────────────────────────────────

@@ -26,6 +26,9 @@ body {
   background: linear-gradient(180deg, #f8fcf9 0%, var(--bg) 60%, #ffffff 100%);
   line-height: 1.6;
   scroll-behavior: smooth;
+  /* Improve rendering performance */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 img,

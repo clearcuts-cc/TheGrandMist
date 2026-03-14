@@ -8,6 +8,9 @@
   <meta name="description" content="Luxury resort landing page with rooms, features, videos, and WhatsApp booking." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Preload critical assets -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" as="style" />
+  <link rel="preload" href="Assets/home.JPG" as="image" fetchpriority="high" />
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
@@ -15,6 +18,15 @@
 </head>
 
 <body>
+  <!-- ===== LOADING SPLASH ===== -->
+  <div id="loading-splash" style="position: fixed; inset: 0; background: #f5f8f4; z-index: 9999; display: flex; align-items: center; justify-content: center; transition: opacity 0.6s ease, visibility 0.6s;">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+      <div style="width: 50px; height: 50px; border: 4px solid rgba(31, 122, 77, 0.1); border-top-color: #1f7a4d; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+      <p style="font-family: 'Playfair Display', serif; color: #1f7a4d; font-weight: 600; letter-spacing: 0.1em; margin: 0;">THE GRAND MIST</p>
+    </div>
+  </div>
+  <style>@keyframes spin { to { transform: rotate(360deg); } }</style>
+  <!-- ===== /LOADING SPLASH ===== -->
   <!-- ===== STICKY NAV ===== -->
   <nav class="site-nav" id="siteNav" aria-label="Main navigation">
     <div class="container nav-inner">
@@ -48,7 +60,7 @@
 
       <!-- Background Container -->
       <div class="hero-bg-container">
-        <img class="hero-image" src="Assets/home.JPG" alt="Luxury resort - Day view" fetchpriority="high" />
+        <img class="hero-image" src="Assets/home.JPG" alt="Luxury resort - Day view" width="1920" height="1080" fetchpriority="high" decoding="async" />
       </div>
 
       <!-- Centered content -->
@@ -141,7 +153,7 @@
             data-room='{"id":"1","name":"Standard Room","badge":"Best Seller","view":"Garden View","size":"320 sq ft","price":"₹5000","desc":"A soothing retreat featuring premium interiors and handcrafted decor. Step out onto your private balcony with a morning cup of tea as nature serenades you.","img":"Assets/ROOM 1/PIC .webp","extraImgs":["Assets/ROOM 2/PIC -10.webp"],"facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service","Private Balcony"],"guests":"2 Adults"}'>
             <div class="room-thumb">
               <img src="Assets/ROOM 1/PIC .webp"
-                alt="Standard Room" loading="lazy" />
+                alt="Standard Room" width="400" height="300" loading="lazy" decoding="async" />
               <span class="room-badge">Best Seller</span>
               <div class="room-hover-cta">View Details →</div>
             </div>
@@ -157,7 +169,7 @@
             data-room='{"id":"2","name":"Standard Room","badge":"Best Seller","view":"Misty Valley","size":"350 sq ft","price":"₹5000","desc":"Wake to golden light and serene surroundings. This room features a private balcony perfect for relaxation, a sumptuous king bed, and curated local artwork on every wall.","img":"Assets/ROOM 1/PIC -2.webp","extraImgs":["Assets/ROOM 2/PIC -11.webp"],"facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service","Private Balcony"],"guests":"2 Adults"}'>
             <div class="room-thumb">
               <img src="Assets/ROOM 1/PIC -2.webp"
-                alt="Standard Room" loading="lazy" />
+                alt="Standard Room" width="400" height="300" loading="lazy" decoding="async" />
               <span class="room-badge">Best Seller</span>
               <div class="room-hover-cta">View Details →</div>
             </div>
@@ -173,7 +185,7 @@
             data-room='{"id":"3","name":"Standard Room","badge":"Best Seller","view":"Hillside View","size":"380 sq ft","price":"₹5000","desc":"Our signature luxury retreat. A sprawling room with a separate living area — designed to offer the ultimate in relaxation and comfort.","img":"Assets/ROOM 1/PIC -3.webp","extraImgs":["Assets/ROOM 2/PIC -12.webp"],"facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service","Private Balcony"],"guests":"2 Adults"}'>
             <div class="room-thumb">
               <img src="Assets/ROOM 1/PIC -3.webp"
-                alt="Standard Room" loading="lazy" />
+                alt="Standard Room" width="400" height="300" loading="lazy" decoding="async" />
               <span class="room-badge">Best Seller</span>
               <div class="room-hover-cta">View Details →</div>
             </div>
@@ -189,7 +201,7 @@
             data-room='{"id":"4","name":"Standard Room","badge":"Best Seller","view":"Mountain Misty","size":"340 sq ft","price":"₹5000","desc":"Nestled in a serene corner of the resort, this room features elegant wooden interiors and a large private balcony to bring you closer to nature.","img":"Assets/ROOM 1/PIC -4.webp","extraImgs":["Assets/ROOM 2/PIC -13.webp"],"facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service","Private Balcony"],"guests":"2 Adults"}'>
             <div class="room-thumb">
               <img src="Assets/ROOM 1/PIC -4.webp"
-                alt="Standard Room" loading="lazy" />
+                alt="Standard Room" width="400" height="300" loading="lazy" decoding="async" />
               <span class="room-badge">Best Seller</span>
               <div class="room-hover-cta">View Details →</div>
             </div>
@@ -205,7 +217,7 @@
             data-room='{"id":"5","name":"Standard Room","badge":"Best Seller","view":"Sunlit Garden","size":"320 sq ft","price":"₹5000","desc":"Step from your room onto a private balcony overlooking our serene landscape. Watch the mist rise at dawn from your private lounger.","img":"Assets/ROOM 1/PIC -5.webp","extraImgs":["Assets/ROOM 2/PIC -14.webp"],"facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service","Private Balcony"],"guests":"2 Adults"}'>
             <div class="room-thumb">
               <img src="Assets/ROOM 1/PIC -5.webp"
-                alt="Standard Room" loading="lazy" />
+                alt="Standard Room" width="400" height="300" loading="lazy" decoding="async" />
               <span class="room-badge">Best Seller</span>
               <div class="room-hover-cta">View Details →</div>
             </div>
@@ -221,7 +233,7 @@
             data-room='{"id":"6","name":"Standard Room","badge":"Best Seller","view":"Panoramic View","size":"360 sq ft","price":"₹5000","desc":"A dream retreat elevated for luxury living. Offers panoramic views of the resort and a unique stargazing skylight over the bed.","img":"Assets/ROOM 1/PIC -6.webp","facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service","Private Balcony"],"guests":"2 Adults"}'>
             <div class="room-thumb">
               <img src="Assets/ROOM 1/PIC -6.webp"
-                alt="Standard Room" loading="lazy" />
+                alt="Standard Room" width="400" height="300" loading="lazy" decoding="async" />
               <span class="room-badge">Best Seller</span>
               <div class="room-hover-cta">View Details →</div>
             </div>
@@ -237,7 +249,7 @@
             data-room='{"id":"7","name":"Standard Room","badge":"Best Seller","view":"Forest View","size":"330 sq ft","price":"₹5000","desc":"Inspired by Indias royal havelis, this room blends traditional furniture and textiles with modern comforts for a culturally immersive stay.","img":"Assets/ROOM 2/PIC -8.webp","facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service","Private Balcony"],"guests":"2 Adults"}'>
             <div class="room-thumb">
               <img src="Assets/ROOM 2/PIC -8.webp"
-                alt="Standard Room" loading="lazy" />
+                alt="Standard Room" width="400" height="300" loading="lazy" decoding="async" />
               <span class="room-badge">Best Seller</span>
               <div class="room-hover-cta">View Details →</div>
             </div>
@@ -253,7 +265,7 @@
             data-room='{"id":"8","name":"Standard Room","badge":"Best Seller","view":"Exclusive High Point","size":"400 sq ft","price":"₹5000","desc":"Perched at the highest point of the resort, this room offers a sanctuary of peace and sophistication. Experience pure exclusivity in the heart of nature.","img":"Assets/ROOM 2/PIC -9.webp","facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service","Private Balcony"],"guests":"2 Adults"}'>
             <div class="room-thumb">
               <img src="Assets/ROOM 2/PIC -9.webp"
-                alt="Standard Room" loading="lazy" />
+                alt="Standard Room" width="400" height="300" loading="lazy" decoding="async" />
               <span class="room-badge">Best Seller</span>
               <div class="room-hover-cta">View Details →</div>
             </div>
@@ -366,7 +378,7 @@
           <!-- Card 1: Pambar Falls -->
           <article class="feature-card has-img" style="padding: 0; display: flex; flex-direction: column;">
             <div style="height: 160px; overflow: hidden; border-radius: var(--radius-md) var(--radius-md) 0 0;">
-              <img src="Assets/pampar water falls.jpg" alt="Pambar Falls" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="Assets/pampar water falls.jpg" alt="Pambar Falls" width="300" height="160" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div style="padding: 1.4rem;">
               <h3>Pambar Falls</h3>
@@ -381,7 +393,7 @@
           <!-- Card 2: Dolphin's Nose -->
           <article class="feature-card has-img" style="padding: 0; display: flex; flex-direction: column;">
             <div style="height: 160px; overflow: hidden; border-radius: var(--radius-md) var(--radius-md) 0 0;">
-              <img src="Assets/Dolphin Nose.jpg" alt="Dolphin's Nose" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="Assets/Dolphin Nose.jpg" alt="Dolphin's Nose" width="300" height="160" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div style="padding: 1.4rem;">
               <h3>Dolphin's Nose</h3>
@@ -396,7 +408,7 @@
           <!-- Card 3: Lake View Point -->
           <article class="feature-card has-img" style="padding: 0; display: flex; flex-direction: column;">
             <div style="height: 160px; overflow: hidden; border-radius: var(--radius-md) var(--radius-md) 0 0;">
-              <img src="Assets/lake view point.jpg" alt="Lake View Point" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="Assets/lake view point.jpg" alt="Lake View Point" width="300" height="160" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div style="padding: 1.4rem;">
               <h3>Lake View Point</h3>
@@ -535,12 +547,12 @@
 
         <!-- Day Layer -->
         <div class="experience-layer experience-day" style="position: absolute; inset: 0; z-index: 1;">
-          <img src="Assets/home.JPG" alt="Resort Day" style="width: 100%; height: 100%; object-fit: cover;" />
+          <img src="Assets/home.JPG" alt="Resort Day" width="1920" height="1080" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;" />
         </div>
         <!-- Night Layer -->
         <div class="experience-layer experience-night" id="nightLayer"
           style="position: absolute; inset: 0; z-index: 2; clip-path: inset(0 0 0 50%);">
-          <img src="Assets/homenight.png" alt="Resort Night"
+          <img src="Assets/homenight.png" alt="Resort Night" width="1920" height="1080" loading="lazy" decoding="async"
             style="width: 100%; height: 100%; object-fit: cover;" />
         </div>
         <!-- Handle -->
