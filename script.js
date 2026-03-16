@@ -1,16 +1,4 @@
 /* ──────────────────────────────────────────
-   Loading Splash — Handle dismissal
-────────────────────────────────────────── */
-window.addEventListener("load", () => {
-  const splash = document.getElementById("loading-splash");
-  if (splash) {
-    splash.style.opacity = "0";
-    splash.style.visibility = "hidden";
-    setTimeout(() => splash.remove(), 600);
-  }
-});
-
-/* ──────────────────────────────────────────
    Sticky nav — scroll detection + hamburger
 ────────────────────────────────────────── */
 (function initNav() {
@@ -102,10 +90,6 @@ window.addEventListener("load", () => {
               <span class="modal-meta-item">
                 <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/></svg>
                 ${room.view}
-              </span>
-              <span class="modal-meta-item">
-                <svg viewBox="0 0 24 24"><path d="M3 5h18v14H3V5Zm2 2v10h14V7H5Zm3 8h6v2H8v-2Z"/></svg>
-                ${room.size}
               </span>
               <span class="modal-meta-item">
                 <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3Zm-8 0c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3Zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13Zm8 0c-.29 0-.62.02-.97.05C16.19 13.89 17 15.02 17 16.5V19h5v-2.5C22 14.17 17.33 13 16 13Z"/></svg>
@@ -439,54 +423,8 @@ window.addEventListener("load", () => {
   stage.addEventListener("mouseenter", stopAuto);
   stage.addEventListener("mouseleave", startAuto);
 
-  // Export startAuto to global for IntersectionObserver
-  window._startReelsAuto = startAuto;
-
   render();
-  // startAuto(); // Will be started by IntersectionObserver
-})();
-
-/* ──────────────────────────────────────────
-   Intersection Observer for Performance
-   – Initialize heavy components only when near view
-   – Trigger animations more efficiently
-────────────────────────────────────────── */
-(function initPerformanceObserver() {
-  const animatedElements = document.querySelectorAll('[data-animate]');
-  const reelsSection = document.getElementById('reels');
-  
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px 100px 0px" // Start a bit before they come into view
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Handle animations
-        if (entry.target.hasAttribute('data-animate')) {
-          entry.target.style.animationPlayState = 'running';
-        }
-        
-        // Handle Reels section
-        if (entry.target.id === 'reels') {
-          if (window._startReelsAuto) {
-            window._startReelsAuto();
-            delete window._startReelsAuto; // Only needs to start once
-          }
-        }
-        
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  animatedElements.forEach(el => {
-    el.style.animationPlayState = 'paused';
-    observer.observe(el);
-  });
-  
-  if (reelsSection) observer.observe(reelsSection);
+  startAuto();
 })();
 
 /* ──────────────────────────────────────────

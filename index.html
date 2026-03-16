@@ -9,7 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- Preload critical assets -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" as="style" />
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+    as="style" />
   <link rel="preload" href="Assets/home.JPG" as="image" fetchpriority="high" />
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
@@ -18,20 +20,14 @@
 </head>
 
 <body>
-  <!-- ===== LOADING SPLASH ===== -->
-  <div id="loading-splash" style="position: fixed; inset: 0; background: #f5f8f4; z-index: 9999; display: flex; align-items: center; justify-content: center; transition: opacity 0.6s ease, visibility 0.6s;">
-    <div style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
-      <div style="width: 50px; height: 50px; border: 4px solid rgba(31, 122, 77, 0.1); border-top-color: #1f7a4d; border-radius: 50%; animation: spin 1s linear infinite;"></div>
-      <p style="font-family: 'Playfair Display', serif; color: #1f7a4d; font-weight: 600; letter-spacing: 0.1em; margin: 0;">THE GRAND MIST</p>
-    </div>
-  </div>
-  <style>@keyframes spin { to { transform: rotate(360deg); } }</style>
-  <!-- ===== /LOADING SPLASH ===== -->
+  <!-- ===== /STICKY NAV ===== -->
   <!-- ===== STICKY NAV ===== -->
   <nav class="site-nav" id="siteNav" aria-label="Main navigation">
     <div class="container nav-inner">
       <a class="brand" href="#home">
-        <span class="brand-mark">GM</span>
+        <div class="brand-mark">
+          <img src="Assets/greenlogo.png" alt="The Grand Mist Logo">
+        </div>
         <span class="brand-text">The Grand Mist</span>
       </a>
       <ul class="nav-links" id="navLinks">
@@ -60,7 +56,8 @@
 
       <!-- Background Container -->
       <div class="hero-bg-container">
-        <img class="hero-image" src="Assets/home.JPG" alt="Luxury resort - Day view" width="1920" height="1080" fetchpriority="high" decoding="async" />
+        <img class="hero-image" src="Assets/home.JPG" alt="Luxury resort - Day view" width="1920" height="1080"
+          fetchpriority="high" decoding="async" />
       </div>
 
       <!-- Centered content -->
@@ -150,129 +147,129 @@
 
           <!-- Card 1 -->
           <article class="room-card" tabindex="0" role="button" aria-label="View Standard Room details"
-            data-room='{"id":"1","name":"Standard Room","badge":"Best Seller","view":"Garden View","size":"320 sq ft","price":"₹5000","desc":"A soothing retreat featuring premium interiors and handcrafted decor. Step out onto your private balcony with a morning cup of tea as nature serenades you.","img":"Assets/ROOM 1/PIC .webp","extraImgs":["Assets/ROOM 2/PIC -10.webp"],"facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service","Private Balcony"],"guests":"2 Adults"}'>
+            data-room='{"id":"1","name":"Standard Room","badge":"Best Seller","view":"Garden View · Ground Floor","price":"₹3500","desc":"A soothing retreat featuring premium interiors and handcrafted decor. Step out onto your private patio with a morning cup of tea as nature serenades you.","img":"Assets/ROOM 1/PIC .webp","extraImgs":["Assets/ROOM 2/PIC -10.webp"],"facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service"],"guests":"2 Adults"}'>
             <div class="room-thumb">
-              <img src="Assets/ROOM 1/PIC .webp"
-                alt="Standard Room" width="400" height="300" loading="lazy" decoding="async" />
+              <img src="Assets/ROOM 1/PIC .webp" alt="Standard Room" width="400" height="300" loading="lazy"
+                decoding="async" />
               <span class="room-badge">Best Seller</span>
               <div class="room-hover-cta">View Details →</div>
             </div>
             <div class="room-content">
               <h3>Standard Room</h3>
-              <p>King bed · Rainfall shower · Private balcony</p>
-              <div class="room-footer"><span class="room-price">From ₹5000<small>/night</small></span></div>
+              <p>King bed · Rainfall shower · Garden View </p>
+              <div class="room-footer"><span class="room-price">From ₹3500<small>/night</small></span></div>
             </div>
           </article>
 
           <!-- Card 2 -->
           <article class="room-card" tabindex="0" role="button" aria-label="View Standard Room details"
-            data-room='{"id":"2","name":"Standard Room","badge":"Best Seller","view":"Misty Valley","size":"350 sq ft","price":"₹5000","desc":"Wake to golden light and serene surroundings. This room features a private balcony perfect for relaxation, a sumptuous king bed, and curated local artwork on every wall.","img":"Assets/ROOM 1/PIC -2.webp","extraImgs":["Assets/ROOM 2/PIC -11.webp"],"facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service","Private Balcony"],"guests":"2 Adults"}'>
+            data-room='{"id":"2","name":"Standard Room","badge":"Best Seller","view":"Misty Valley","price":"₹3500","desc":"Wake to golden light and serene surroundings. This room features premium bedding, a sumptuous king bed, and curated local artwork on every wall.","img":"Assets/ROOM 1/PIC -2.webp","extraImgs":["Assets/ROOM 2/PIC -11.webp"],"facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service"],"guests":"2 Adults"}'>
             <div class="room-thumb">
-              <img src="Assets/ROOM 1/PIC -2.webp"
-                alt="Standard Room" width="400" height="300" loading="lazy" decoding="async" />
+              <img src="Assets/ROOM 1/PIC -2.webp" alt="Standard Room" width="400" height="300" loading="lazy"
+                decoding="async" />
               <span class="room-badge">Best Seller</span>
               <div class="room-hover-cta">View Details →</div>
             </div>
             <div class="room-content">
               <h3>Standard Room</h3>
-              <p>King bed · Rainfall shower · Private balcony</p>
-              <div class="room-footer"><span class="room-price">From ₹5000<small>/night</small></span></div>
+              <p>King bed · Rainfall shower · Misty Valley</p>
+              <div class="room-footer"><span class="room-price">From ₹3500<small>/night</small></span></div>
             </div>
           </article>
 
           <!-- Card 3 -->
           <article class="room-card" tabindex="0" role="button" aria-label="View Standard Room details"
-            data-room='{"id":"3","name":"Standard Room","badge":"Best Seller","view":"Hillside View","size":"380 sq ft","price":"₹5000","desc":"Our signature luxury retreat. A sprawling room with a separate living area — designed to offer the ultimate in relaxation and comfort.","img":"Assets/ROOM 1/PIC -3.webp","extraImgs":["Assets/ROOM 2/PIC -12.webp"],"facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service","Private Balcony"],"guests":"2 Adults"}'>
+            data-room='{"id":"3","name":"Standard Room","badge":"Best Seller","view":"Mountain View","price":"₹4500","desc":"Our signature luxury retreat. A sprawling room with a separate living area and a private balcony — designed to offer the ultimate in relaxation and comfort.","img":"Assets/ROOM 1/PIC -3.webp","extraImgs":["Assets/ROOM 2/PIC -12.webp"],"facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service","Balcony"],"guests":"2 Adults"}'>
             <div class="room-thumb">
-              <img src="Assets/ROOM 1/PIC -3.webp"
-                alt="Standard Room" width="400" height="300" loading="lazy" decoding="async" />
+              <img src="Assets/ROOM 1/PIC -3.webp" alt="Standard Room" width="400" height="300" loading="lazy"
+                decoding="async" />
               <span class="room-badge">Best Seller</span>
               <div class="room-hover-cta">View Details →</div>
             </div>
             <div class="room-content">
               <h3>Standard Room</h3>
-              <p>King bed · Rainfall shower · Private balcony</p>
-              <div class="room-footer"><span class="room-price">From ₹5000<small>/night</small></span></div>
+              <p>King bed · Rainfall shower · Balcony</p>
+              <div class="room-footer"><span class="room-price">From ₹4500<small>/night</small></span></div>
             </div>
           </article>
 
           <!-- Card 4 -->
           <article class="room-card" tabindex="0" role="button" aria-label="View Standard Room details"
-            data-room='{"id":"4","name":"Standard Room","badge":"Best Seller","view":"Mountain Misty","size":"340 sq ft","price":"₹5000","desc":"Nestled in a serene corner of the resort, this room features elegant wooden interiors and a large private balcony to bring you closer to nature.","img":"Assets/ROOM 1/PIC -4.webp","extraImgs":["Assets/ROOM 2/PIC -13.webp"],"facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service","Private Balcony"],"guests":"2 Adults"}'>
+            data-room='{"id":"4","name":"Standard Room","badge":"Best Seller","view":"Mountain View","price":"₹4500","desc":"Nestled in a serene corner of the resort, this room features elegant wooden interiors and a private balcony to bring you closer to nature.","img":"Assets/ROOM 1/PIC -4.webp","extraImgs":["Assets/ROOM 2/PIC -13.webp"],"facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service","Balcony"],"guests":"2 Adults"}'>
             <div class="room-thumb">
-              <img src="Assets/ROOM 1/PIC -4.webp"
-                alt="Standard Room" width="400" height="300" loading="lazy" decoding="async" />
+              <img src="Assets/ROOM 1/PIC -4.webp" alt="Standard Room" width="400" height="300" loading="lazy"
+                decoding="async" />
               <span class="room-badge">Best Seller</span>
               <div class="room-hover-cta">View Details →</div>
             </div>
             <div class="room-content">
               <h3>Standard Room</h3>
-              <p>King bed · Rainfall shower · Private balcony</p>
-              <div class="room-footer"><span class="room-price">From ₹5000<small>/night</small></span></div>
+              <p>King bed · Rainfall shower · Balcony</p>
+              <div class="room-footer"><span class="room-price">From ₹4500<small>/night</small></span></div>
             </div>
           </article>
 
           <!-- Card 5 -->
           <article class="room-card" tabindex="0" role="button" aria-label="View Standard Room details"
-            data-room='{"id":"5","name":"Standard Room","badge":"Best Seller","view":"Sunlit Garden","size":"320 sq ft","price":"₹5000","desc":"Step from your room onto a private balcony overlooking our serene landscape. Watch the mist rise at dawn from your private lounger.","img":"Assets/ROOM 1/PIC -5.webp","extraImgs":["Assets/ROOM 2/PIC -14.webp"],"facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service","Private Balcony"],"guests":"2 Adults"}'>
+            data-room='{"id":"5","name":"Standard Room","badge":"Best Seller","view":"Mountain View","price":"₹4500","desc":"Step from your room onto a balcony overlooking our serene landscape. Watch the mist rise at dawn from your private lounge area.","img":"Assets/ROOM 1/PIC -5.webp","extraImgs":["Assets/ROOM 2/PIC -14.webp"],"facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service","Balcony"],"guests":"2 Adults"}'>
             <div class="room-thumb">
-              <img src="Assets/ROOM 1/PIC -5.webp"
-                alt="Standard Room" width="400" height="300" loading="lazy" decoding="async" />
+              <img src="Assets/ROOM 1/PIC -5.webp" alt="Standard Room" width="400" height="300" loading="lazy"
+                decoding="async" />
               <span class="room-badge">Best Seller</span>
               <div class="room-hover-cta">View Details →</div>
             </div>
             <div class="room-content">
               <h3>Standard Room</h3>
-              <p>King bed · Rainfall shower · Private balcony</p>
-              <div class="room-footer"><span class="room-price">From ₹5000<small>/night</small></span></div>
+              <p>King bed · Rainfall shower · Balcony</p>
+              <div class="room-footer"><span class="room-price">From ₹4500<small>/night</small></span></div>
             </div>
           </article>
 
           <!-- Card 6 -->
           <article class="room-card" tabindex="0" role="button" aria-label="View Standard Room details"
-            data-room='{"id":"6","name":"Standard Room","badge":"Best Seller","view":"Panoramic View","size":"360 sq ft","price":"₹5000","desc":"A dream retreat elevated for luxury living. Offers panoramic views of the resort and a unique stargazing skylight over the bed.","img":"Assets/ROOM 1/PIC -6.webp","facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service","Private Balcony"],"guests":"2 Adults"}'>
+            data-room='{"id":"6","name":"Standard Room","badge":"Best Seller","view":"Panoramic View","price":"₹5500","desc":"A dream retreat elevated for luxury living. Offers panoramic views of the resort and a unique stargazing skylight over the bed, with a private balcony.","img":"Assets/ROOM 1/PIC -6.webp","facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service","Private Balcony"],"guests":"2 Adults"}'>
             <div class="room-thumb">
-              <img src="Assets/ROOM 1/PIC -6.webp"
-                alt="Standard Room" width="400" height="300" loading="lazy" decoding="async" />
+              <img src="Assets/ROOM 1/PIC -6.webp" alt="Standard Room" width="400" height="300" loading="lazy"
+                decoding="async" />
               <span class="room-badge">Best Seller</span>
               <div class="room-hover-cta">View Details →</div>
             </div>
             <div class="room-content">
               <h3>Standard Room</h3>
-              <p>King bed · Rainfall shower · Private balcony</p>
-              <div class="room-footer"><span class="room-price">From ₹5000<small>/night</small></span></div>
+              <p>King bed · Rainfall shower · Private Balcony</p>
+              <div class="room-footer"><span class="room-price">From ₹5500<small>/night</small></span></div>
             </div>
           </article>
 
           <!-- Card 7 -->
           <article class="room-card" tabindex="0" role="button" aria-label="View Standard Room details"
-            data-room='{"id":"7","name":"Standard Room","badge":"Best Seller","view":"Forest View","size":"330 sq ft","price":"₹5000","desc":"Inspired by Indias royal havelis, this room blends traditional furniture and textiles with modern comforts for a culturally immersive stay.","img":"Assets/ROOM 2/PIC -8.webp","facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service","Private Balcony"],"guests":"2 Adults"}'>
+            data-room='{"id":"7","name":"Standard Room","badge":"Best Seller","view":"Forest View","price":"₹5500","desc":"Inspired by Indias royal havelis, this room blends traditional furniture and textiles with modern comforts for a culturally immersive stay with a private balcony.","img":"Assets/ROOM 2/PIC -8.webp","facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service","Private Balcony"],"guests":"2 Adults"}'>
             <div class="room-thumb">
-              <img src="Assets/ROOM 2/PIC -8.webp"
-                alt="Standard Room" width="400" height="300" loading="lazy" decoding="async" />
+              <img src="Assets/ROOM 2/PIC -8.webp" alt="Standard Room" width="400" height="300" loading="lazy"
+                decoding="async" />
               <span class="room-badge">Best Seller</span>
               <div class="room-hover-cta">View Details →</div>
             </div>
             <div class="room-content">
               <h3>Standard Room</h3>
-              <p>King bed · Rainfall shower · Private balcony</p>
-              <div class="room-footer"><span class="room-price">From ₹5000<small>/night</small></span></div>
+              <p>King bed · Rainfall shower · Private Balcony</p>
+              <div class="room-footer"><span class="room-price">From ₹5500<small>/night</small></span></div>
             </div>
           </article>
 
           <!-- Card 8 -->
           <article class="room-card" tabindex="0" role="button" aria-label="View Standard Room details"
-            data-room='{"id":"8","name":"Standard Room","badge":"Best Seller","view":"Exclusive High Point","size":"400 sq ft","price":"₹5000","desc":"Perched at the highest point of the resort, this room offers a sanctuary of peace and sophistication. Experience pure exclusivity in the heart of nature.","img":"Assets/ROOM 2/PIC -9.webp","facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service","Private Balcony"],"guests":"2 Adults"}'>
+            data-room='{"id":"8","name":"Standard Room","badge":"Best Seller","view":"Exclusive High Point","price":"₹5500","desc":"Perched at the highest point of the resort, this room offers a sanctuary of peace and sophistication. Experience pure exclusivity with your own private balcony.","img":"Assets/ROOM 2/PIC -9.webp","facilities":["King Bed","Rainfall Shower","Free Wi-Fi","Flat Screen TV","24h Room Service","Private Balcony"],"guests":"2 Adults"}'>
             <div class="room-thumb">
-              <img src="Assets/ROOM 2/PIC -9.webp"
-                alt="Standard Room" width="400" height="300" loading="lazy" decoding="async" />
+              <img src="Assets/ROOM 2/PIC -9.webp" alt="Standard Room" width="400" height="300" loading="lazy"
+                decoding="async" />
               <span class="room-badge">Best Seller</span>
               <div class="room-hover-cta">View Details →</div>
             </div>
             <div class="room-content">
               <h3>Standard Room</h3>
-              <p>King bed · Rainfall shower · Private balcony</p>
-              <div class="room-footer"><span class="room-price">From ₹5000<small>/night</small></span></div>
+              <p>King bed · Rainfall shower · Private Balcony</p>
+              <div class="room-footer"><span class="room-price">From ₹5500<small>/night</small></span></div>
             </div>
           </article>
 
@@ -293,7 +290,7 @@
                   d="M12 2a6 6 0 0 0-6 6c0 2.2 1.3 4.1 3.1 5l2.9 7 2.9-7A5.99 5.99 0 0 0 18 8a6 6 0 0 0-6-6Zm0 3.2A2.8 2.8 0 1 1 9.2 8 2.8 2.8 0 0 1 12 5.2Z" />
               </svg>
             </span>
-            <h3>Scenic Location</h3>
+            <h3>Hilltop Location</h3>
             <p>Set amid scenic hills and lush greenery, offering a peaceful escape in the heart of Kodaikanal.</p>
           </article>
           <article class="feature-card">
@@ -311,7 +308,7 @@
                 <path d="M3 7h18v10H3V7Zm2 2v6h14V9H5Zm4 10h6v2H9v-2Z" />
               </svg>
             </span>
-            <h3>Meeting Hall</h3>
+            <h3>Mini Meeting Hall</h3>
             <p>Spacious hall with modern amenities, perfect for meetings, conferences, and events.</p>
           </article>
           <article class="feature-card">
@@ -339,7 +336,7 @@
                 <path d="M2 11h20v2H2v-2Zm2-6h4v4H4V5Zm12 0h4v4h-4V5ZM4 15h4v4H4v-4Zm12 0h4v4h-4v-4Z" />
               </svg>
             </span>
-            <h3>Kitchen</h3>
+            <h3>Smart Kitchen</h3>
             <p>Equipped kitchen with modern appliances and dining area for your culinary needs.</p>
           </article>
           <article class="feature-card">
@@ -360,7 +357,8 @@
               </svg>
             </span>
             <h3>Garden View</h3>
-            <p>Relax and unwind while taking in the beautiful, serene views of our lush greenery right outside your room.</p>
+            <p>Relax and unwind while taking in the beautiful, serene views of our lush greenery right outside your
+              room.</p>
           </article>
         </div>
       </div>
@@ -378,12 +376,17 @@
           <!-- Card 1: Pambar Falls -->
           <article class="feature-card has-img" style="padding: 0; display: flex; flex-direction: column;">
             <div style="height: 160px; overflow: hidden; border-radius: var(--radius-md) var(--radius-md) 0 0;">
-              <img src="Assets/pampar water falls.jpg" alt="Pambar Falls" width="300" height="160" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="Assets/pampar water falls.jpg" alt="Pambar Falls" width="300" height="160" loading="lazy"
+                decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div style="padding: 1.4rem;">
               <h3>Pambar Falls</h3>
-              <span style="font-size: 0.85rem; color: #1f7a4d; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.8rem;">
-                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span
+                style="font-size: 0.85rem; color: #1f7a4d; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.8rem;">
+                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
                 ~0.5 km (Walking distance)
               </span>
               <p>Also known as "Grand Cascade", these beautiful tiered falls are right in our neighborhood.</p>
@@ -393,12 +396,17 @@
           <!-- Card 2: Dolphin's Nose -->
           <article class="feature-card has-img" style="padding: 0; display: flex; flex-direction: column;">
             <div style="height: 160px; overflow: hidden; border-radius: var(--radius-md) var(--radius-md) 0 0;">
-              <img src="Assets/Dolphin Nose.jpg" alt="Dolphin's Nose" width="300" height="160" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="Assets/Dolphin Nose.jpg" alt="Dolphin's Nose" width="300" height="160" loading="lazy"
+                decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div style="padding: 1.4rem;">
               <h3>Dolphin's Nose</h3>
-              <span style="font-size: 0.85rem; color: #1f7a4d; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.8rem;">
-                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span
+                style="font-size: 0.85rem; color: #1f7a4d; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.8rem;">
+                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
                 ~0.8 km (Start of trek)
               </span>
               <p>A flat rock projecting over a deep chasm, offering a bird's eye view of the valley.</p>
@@ -408,12 +416,17 @@
           <!-- Card 3: Lake View Point -->
           <article class="feature-card has-img" style="padding: 0; display: flex; flex-direction: column;">
             <div style="height: 160px; overflow: hidden; border-radius: var(--radius-md) var(--radius-md) 0 0;">
-              <img src="Assets/lake view point.jpg" alt="Lake View Point" width="300" height="160" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="Assets/lake view point.jpg" alt="Lake View Point" width="300" height="160" loading="lazy"
+                decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div style="padding: 1.4rem;">
               <h3>Lake View Point</h3>
-              <span style="font-size: 0.85rem; color: #1f7a4d; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.8rem;">
-                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span
+                style="font-size: 0.85rem; color: #1f7a4d; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.8rem;">
+                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
                 ~1.9 km away
               </span>
               <p>Capturing the entire star-shaped Kodaikanal Lake in one frame—a photographer's delight.</p>
@@ -427,8 +440,12 @@
             </div>
             <div style="padding: 1.4rem;">
               <h3>Bryant Park</h3>
-              <span style="font-size: 0.85rem; color: #1f7a4d; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.8rem;">
-                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span
+                style="font-size: 0.85rem; color: #1f7a4d; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.8rem;">
+                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
                 ~2.4 km away
               </span>
               <p>A wonderfully maintained botanical garden featuring diverse flora and a rose garden.</p>
@@ -438,12 +455,17 @@
           <!-- Card 5: Vattakanal Waterfalls -->
           <article class="feature-card has-img" style="padding: 0; display: flex; flex-direction: column;">
             <div style="height: 160px; overflow: hidden; border-radius: var(--radius-md) var(--radius-md) 0 0;">
-              <img src="Assets/vattakanal-falls-kodaikanal.jpg" alt="Vattakanal Waterfalls" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="Assets/vattakanal-falls-kodaikanal.jpg" alt="Vattakanal Waterfalls"
+                style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div style="padding: 1.4rem;">
               <h3>Vattakanal Waterfalls</h3>
-              <span style="font-size: 0.85rem; color: #1f7a4d; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.8rem;">
-                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span
+                style="font-size: 0.85rem; color: #1f7a4d; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.8rem;">
+                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
                 ~2.4 km away
               </span>
               <p>A serene waterfall surrounded by lush greenery, perfect for nature photography.</p>
@@ -457,8 +479,12 @@
             </div>
             <div style="padding: 1.4rem;">
               <h3>Kodaikanal Lake</h3>
-              <span style="font-size: 0.85rem; color: #1f7a4d; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.8rem;">
-                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span
+                style="font-size: 0.85rem; color: #1f7a4d; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.8rem;">
+                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
                 ~2.6 km away
               </span>
               <p>A beautiful star-shaped lake perfect for boating, cycling, and horse riding.</p>
@@ -468,12 +494,17 @@
           <!-- Card 7: Coaker's Walk -->
           <article class="feature-card has-img" style="padding: 0; display: flex; flex-direction: column;">
             <div style="height: 160px; overflow: hidden; border-radius: var(--radius-md) var(--radius-md) 0 0;">
-              <img src="Assets/coakers-walk.webp" alt="Coaker's Walk" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="Assets/coakers-walk.webp" alt="Coaker's Walk"
+                style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div style="padding: 1.4rem;">
               <h3>Coaker's Walk</h3>
-              <span style="font-size: 0.85rem; color: #1f7a4d; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.8rem;">
-                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span
+                style="font-size: 0.85rem; color: #1f7a4d; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.8rem;">
+                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
                 ~3.0 km away
               </span>
               <p>A paved pedestrian path providing stunning panoramic views of the distant plains.</p>
@@ -487,8 +518,12 @@
             </div>
             <div style="padding: 1.4rem;">
               <h3>Pine Forest</h3>
-              <span style="font-size: 0.85rem; color: #1f7a4d; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.8rem;">
-                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span
+                style="font-size: 0.85rem; color: #1f7a4d; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.8rem;">
+                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
                 ~3.8 km away
               </span>
               <p>Stroll among the majestic tall pines, a favorite spot for photography and movies.</p>
@@ -498,12 +533,17 @@
           <!-- Card 9: Pillar Rocks -->
           <article class="feature-card has-img" style="padding: 0; display: flex; flex-direction: column;">
             <div style="height: 160px; overflow: hidden; border-radius: var(--radius-md) var(--radius-md) 0 0;">
-              <img src="Assets/pillar rock.jpg" alt="Pillar Rocks" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="Assets/pillar rock.jpg" alt="Pillar Rocks"
+                style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div style="padding: 1.4rem;">
               <h3>Pillar Rocks</h3>
-              <span style="font-size: 0.85rem; color: #1f7a4d; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.8rem;">
-                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span
+                style="font-size: 0.85rem; color: #1f7a4d; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.8rem;">
+                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
                 ~4.5 km away
               </span>
               <p>Three giant rock pillars standing tall, often enveloped in the classic Kodai mist.</p>
@@ -517,8 +557,12 @@
             </div>
             <div style="padding: 1.4rem;">
               <h3>Guna Caves</h3>
-              <span style="font-size: 0.85rem; color: #1f7a4d; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.8rem;">
-                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span
+                style="font-size: 0.85rem; color: #1f7a4d; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.8rem;">
+                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
                 ~5.5 km away
               </span>
               <p>Ancient caverns with unique root formations, famously known from the movie 'Guna'.</p>
@@ -530,24 +574,30 @@
 
     <section class="section section-dark experience-section" id="experience-mode"
       style="background: #111; padding: 0; position: relative; height: 100vh; overflow: hidden;">
-      
+
       <div class="experience-slider-container" id="experienceSlider"
         style="position: relative; width: 100%; height: 100vh; overflow: hidden;">
-        
+
         <!-- Overlay Heading -->
-        <div class="container" style="position: absolute; top: 15%; left: 0; right: 0; z-index: 20; pointer-events: none;">
+        <div class="container"
+          style="position: absolute; top: 15%; left: 0; right: 0; z-index: 20; pointer-events: none;">
           <div class="section-heading white" style="text-align: center; text-shadow: 0 4px 30px rgba(0,0,0,0.8);">
             <p class="eyebrow emerald"
               style="color: #6ee7b7; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 1rem;">
               The Experience</p>
-            <h2 style="color: #fff; font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1.2rem; font-weight: 800; line-height: 1.1;">Day to Night Magic</h2>
-            <p class="experience-sub" style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto; font-size: 1.1rem; font-weight: 400; background: rgba(0,0,0,0.2); backdrop-filter: blur(4px); padding: 0.8rem 1.5rem; border-radius: 100px; display: inline-block;">Slide the divider to witness our resort's evening transformation.</p>
+            <h2
+              style="color: #fff; font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1.2rem; font-weight: 800; line-height: 1.1;">
+              Day to Night Magic</h2>
+            <p class="experience-sub"
+              style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto; font-size: 1.1rem; font-weight: 400; background: rgba(0,0,0,0.2); backdrop-filter: blur(4px); padding: 0.8rem 1.5rem; border-radius: 100px; display: inline-block;">
+              Slide the divider to witness our resort's evening transformation.</p>
           </div>
         </div>
 
         <!-- Day Layer -->
         <div class="experience-layer experience-day" style="position: absolute; inset: 0; z-index: 1;">
-          <img src="Assets/home.JPG" alt="Resort Day" width="1920" height="1080" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;" />
+          <img src="Assets/home.JPG" alt="Resort Day" width="1920" height="1080" loading="lazy" decoding="async"
+            style="width: 100%; height: 100%; object-fit: cover;" />
         </div>
         <!-- Night Layer -->
         <div class="experience-layer experience-night" id="nightLayer"
@@ -560,7 +610,9 @@
           style="position: absolute; top: 0; bottom: 0; left: 50%; width: 4px; background: rgba(255,255,255,0.4); z-index: 25; cursor: ew-resize; transform: translateX(-50%); display: flex; align-items: center; justify-content: center;">
           <div class="handle-icon"
             style="width: 64px; height: 64px; background: #1f7a4d; border: 4px solid #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 4px 20px rgba(0,0,0,0.5); position: relative;">
-            <div style="position: absolute; top: -45px; background: rgba(0,0,0,0.7); padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap; pointer-events: none; border: 1px solid rgba(255,255,255,0.2);">DRAG</div>
+            <div
+              style="position: absolute; top: -45px; background: rgba(0,0,0,0.7); padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap; pointer-events: none; border: 1px solid rgba(255,255,255,0.2);">
+              DRAG</div>
             <svg class="sun-icon" viewBox="0 0 24 24"
               style="width: 28px; height: 28px; position: absolute; transition: opacity 0.5s;">
               <path
@@ -578,371 +630,364 @@
     </section>
 
     <!-- ===== ROOM DETAIL MODAL ===== -->
-      <div class="room-modal-overlay" id="roomModal" role="dialog" aria-modal="true" aria-label="Room details">
-        <div class="room-modal" id="roomModalContent">
-          <button class="modal-close" id="modalClose" aria-label="Close">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
-            </svg>
-          </button>
-          <!-- Populated by JS -->
-        </div>
+    <div class="room-modal-overlay" id="roomModal" role="dialog" aria-modal="true" aria-label="Room details">
+      <div class="room-modal" id="roomModalContent">
+        <button class="modal-close" id="modalClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+          </svg>
+        </button>
+        <!-- Populated by JS -->
       </div>
-      <!-- ===== /ROOM DETAIL MODAL ===== -->
+    </div>
+    <!-- ===== /ROOM DETAIL MODAL ===== -->
 
 
-      <!-- ===== VIDEO REELS SECTION ===== -->
-      <section class="section reels-section" id="reels">
+    <!-- ===== VIDEO REELS SECTION ===== -->
+    <section class="section reels-section" id="reels">
 
-        <!-- Section header -->
-        <div class="reels-header">
-          <span class="reels-featured-pill">Resort Experience</span>
-          <h2 class="reels-title">OUR RESORT <em>REELS</em></h2>
-          <p class="reels-sub">Swipe through immersive moments from The Grand Mist</p>
+      <!-- Section header -->
+      <div class="reels-header">
+        <span class="reels-featured-pill">Resort Experience</span>
+        <h2 class="reels-title">OUR RESORT <em>REELS</em></h2>
+        <p class="reels-sub">Swipe through immersive moments from The Grand Mist</p>
+      </div>
+
+      <!-- Carousel stage -->
+      <div class="reels-stage" id="reelsStage" aria-label="Resort video reels">
+
+        <!-- Reel 1 – Infinity Pool -->
+        <div class="reel-card" data-index="0"
+          data-video="https://cdn.pixabay.com/video/2021/04/12/70874-538054425_tiny.mp4">
+          <div class="reel-inner">
+            <img class="reel-poster" src="Assets/ROOM 2/PIC -10.webp" alt="Infinity Pool at The Grand Mist"
+              loading="lazy" />
+            <div class="reel-overlay"></div>
+            <div class="reel-info">
+              <span class="reel-category">Pool & Spa</span>
+              <h3 class="reel-name">Infinity Pool Tour</h3>
+              <p class="reel-views">12.4K Views</p>
+            </div>
+            <button class="reel-play-btn" aria-label="Play Infinity Pool Tour">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7L8 5Z" fill="currentColor" />
+              </svg>
+            </button>
+          </div>
         </div>
 
-        <!-- Carousel stage -->
-        <div class="reels-stage" id="reelsStage" aria-label="Resort video reels">
-
-          <!-- Reel 1 – Infinity Pool -->
-          <div class="reel-card" data-index="0"
-            data-video="https://cdn.pixabay.com/video/2021/04/12/70874-538054425_tiny.mp4">
-            <div class="reel-inner">
-              <img class="reel-poster"
-                src="Assets/ROOM 2/PIC -10.webp"
-                alt="Infinity Pool at The Grand Mist" loading="lazy" />
-              <div class="reel-overlay"></div>
-              <div class="reel-info">
-                <span class="reel-category">Pool & Spa</span>
-                <h3 class="reel-name">Infinity Pool Tour</h3>
-                <p class="reel-views">12.4K Views</p>
-              </div>
-              <button class="reel-play-btn" aria-label="Play Infinity Pool Tour">
-                <svg viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7L8 5Z" fill="currentColor" />
-                </svg>
-              </button>
+        <!-- Reel 2 – Forest Walk -->
+        <div class="reel-card" data-index="1"
+          data-video="https://cdn.pixabay.com/video/2023/10/24/186355-877790324_tiny.mp4">
+          <div class="reel-inner">
+            <img class="reel-poster" src="Assets/ROOM 2/PIC -11.webp" alt="Nature forest walk" loading="lazy" />
+            <div class="reel-overlay"></div>
+            <div class="reel-info">
+              <span class="reel-category">Nature</span>
+              <h3 class="reel-name">Forest Morning Walk</h3>
+              <p class="reel-views">8.7K Views</p>
             </div>
+            <button class="reel-play-btn" aria-label="Play Forest Morning Walk">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7L8 5Z" fill="currentColor" />
+              </svg>
+            </button>
           </div>
-
-          <!-- Reel 2 – Forest Walk -->
-          <div class="reel-card" data-index="1"
-            data-video="https://cdn.pixabay.com/video/2023/10/24/186355-877790324_tiny.mp4">
-            <div class="reel-inner">
-              <img class="reel-poster"
-                src="Assets/ROOM 2/PIC -11.webp"
-                alt="Nature forest walk" loading="lazy" />
-              <div class="reel-overlay"></div>
-              <div class="reel-info">
-                <span class="reel-category">Nature</span>
-                <h3 class="reel-name">Forest Morning Walk</h3>
-                <p class="reel-views">8.7K Views</p>
-              </div>
-              <button class="reel-play-btn" aria-label="Play Forest Morning Walk">
-                <svg viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7L8 5Z" fill="currentColor" />
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          <!-- Reel 3 – Villa Tour (ACTIVE) -->
-          <div class="reel-card active" data-index="2"
-            data-video="https://cdn.pixabay.com/video/2021/08/20/85750-591244799_tiny.mp4">
-            <div class="reel-inner">
-              <img class="reel-poster"
-                src="Assets/ROOM 2/PIC -12.webp"
-                alt="Luxury villa interior" loading="lazy" />
-              <div class="reel-overlay"></div>
-              <div class="reel-info">
-                <span class="reel-category">Rooms</span>
-                <h3 class="reel-name">Private Villa Walkthrough</h3>
-                <p class="reel-views">21.5K Views</p>
-              </div>
-              <button class="reel-play-btn" aria-label="Play Private Villa Walkthrough">
-                <svg viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7L8 5Z" fill="currentColor" />
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          <!-- Reel 4 – Dining -->
-          <div class="reel-card" data-index="3"
-            data-video="https://cdn.pixabay.com/video/2022/11/04/137637-767098492_tiny.mp4">
-            <div class="reel-inner">
-              <img class="reel-poster"
-                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80"
-                alt="Fine dining experience" loading="lazy" />
-              <div class="reel-overlay"></div>
-              <div class="reel-info">
-                <span class="reel-category">Dining</span>
-                <h3 class="reel-name">Curated Fine Dining</h3>
-                <p class="reel-views">9.2K Views</p>
-              </div>
-              <button class="reel-play-btn" aria-label="Play Curated Fine Dining">
-                <svg viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7L8 5Z" fill="currentColor" />
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          <!-- Reel 5 – Sunrise -->
-          <div class="reel-card" data-index="4"
-            data-video="https://cdn.pixabay.com/video/2021/03/13/67849-524029237_tiny.mp4">
-            <div class="reel-inner">
-              <img class="reel-poster"
-                src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80"
-                alt="Valley sunrise view" loading="lazy" />
-              <div class="reel-overlay"></div>
-              <div class="reel-info">
-                <span class="reel-category">Views</span>
-                <h3 class="reel-name">Valley Sunrise Experience</h3>
-                <p class="reel-views">17.8K Views</p>
-              </div>
-              <button class="reel-play-btn" aria-label="Play Valley Sunrise Experience">
-                <svg viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7L8 5Z" fill="currentColor" />
-                </svg>
-              </button>
-            </div>
-          </div>
-
-        </div><!-- /reels-stage -->
-
-        <!-- Controls -->
-        <div class="reels-controls">
-          <button class="reel-ctrl-btn" id="reelPrev" aria-label="Previous reel">
-            <svg viewBox="0 0 24 24">
-              <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
-                stroke-linejoin="round" fill="none" />
-            </svg>
-          </button>
-          <button class="reel-ctrl-btn reel-mute-btn" id="reelMute" aria-label="Toggle mute">
-            <svg viewBox="0 0 24 24" id="muteIcon">
-              <path d="M11 5 6 9H2v6h4l5 4V5ZM19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-            </svg>
-          </button>
-          <button class="reel-ctrl-btn reel-ctrl-next" id="reelNext" aria-label="Next reel">
-            <svg viewBox="0 0 24 24">
-              <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
-                stroke-linejoin="round" fill="none" />
-            </svg>
-          </button>
         </div>
 
-        <!-- Dot pagination -->
-        <div class="reels-dots" id="reelsDots" role="tablist" aria-label="Reel navigation">
-          <button class="reel-dot" data-dot="0" role="tab" aria-label="Reel 1"></button>
-          <button class="reel-dot" data-dot="1" role="tab" aria-label="Reel 2"></button>
-          <button class="reel-dot active" data-dot="2" role="tab" aria-label="Reel 3" aria-selected="true"></button>
-          <button class="reel-dot" data-dot="3" role="tab" aria-label="Reel 4"></button>
-          <button class="reel-dot" data-dot="4" role="tab" aria-label="Reel 5"></button>
+        <!-- Reel 3 – Villa Tour (ACTIVE) -->
+        <div class="reel-card active" data-index="2"
+          data-video="https://cdn.pixabay.com/video/2021/08/20/85750-591244799_tiny.mp4">
+          <div class="reel-inner">
+            <img class="reel-poster" src="Assets/ROOM 2/PIC -12.webp" alt="Luxury villa interior" loading="lazy" />
+            <div class="reel-overlay"></div>
+            <div class="reel-info">
+              <span class="reel-category">Rooms</span>
+              <h3 class="reel-name">Private Villa Walkthrough</h3>
+              <p class="reel-views">21.5K Views</p>
+            </div>
+            <button class="reel-play-btn" aria-label="Play Private Villa Walkthrough">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7L8 5Z" fill="currentColor" />
+              </svg>
+            </button>
+          </div>
         </div>
 
-      </section>
-      <!-- ===== /VIDEO REELS SECTION ===== -->
-
-      <!-- ===== VIDEO LIGHTBOX OVERLAY ===== -->
-      <div class="video-overlay" id="videoOverlay" role="dialog" aria-modal="true">
-        <div class="video-overlay-inner">
-          <button class="video-close" id="videoClose" aria-label="Close advertisement video">
-            <svg viewBox="0 0 24 24">
-              <path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                fill="none" />
-            </svg>
-          </button>
-          <div class="video-player-wrap">
-            <video id="overlayVideo" playsinline preload="auto">
-              Your browser does not support the video tag.
-            </video>
-            <!-- ADVERTISEMENT OVERLAYS -->
-            <div class="video-ad-info">
-              <span class="ad-tag">Advertisement</span>
-              <h2 class="ad-title">THE GRAND MIST</h2>
-              <p class="ad-desc">Experience eco-luxury in the heart of nature.</p>
-              <a href="#booking" class="ad-cta btn btn-primary">Book Your Sanctuary</a>
+        <!-- Reel 4 – Dining -->
+        <div class="reel-card" data-index="3"
+          data-video="https://cdn.pixabay.com/video/2022/11/04/137637-767098492_tiny.mp4">
+          <div class="reel-inner">
+            <img class="reel-poster"
+              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80"
+              alt="Fine dining experience" loading="lazy" />
+            <div class="reel-overlay"></div>
+            <div class="reel-info">
+              <span class="reel-category">Dining</span>
+              <h3 class="reel-name">Curated Fine Dining</h3>
+              <p class="reel-views">9.2K Views</p>
             </div>
+            <button class="reel-play-btn" aria-label="Play Curated Fine Dining">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7L8 5Z" fill="currentColor" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Reel 5 – Sunrise -->
+        <div class="reel-card" data-index="4"
+          data-video="https://cdn.pixabay.com/video/2021/03/13/67849-524029237_tiny.mp4">
+          <div class="reel-inner">
+            <img class="reel-poster"
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80"
+              alt="Valley sunrise view" loading="lazy" />
+            <div class="reel-overlay"></div>
+            <div class="reel-info">
+              <span class="reel-category">Views</span>
+              <h3 class="reel-name">Valley Sunrise Experience</h3>
+              <p class="reel-views">17.8K Views</p>
+            </div>
+            <button class="reel-play-btn" aria-label="Play Valley Sunrise Experience">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7L8 5Z" fill="currentColor" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div><!-- /reels-stage -->
+
+      <!-- Controls -->
+      <div class="reels-controls">
+        <button class="reel-ctrl-btn" id="reelPrev" aria-label="Previous reel">
+          <svg viewBox="0 0 24 24">
+            <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+              stroke-linejoin="round" fill="none" />
+          </svg>
+        </button>
+        <button class="reel-ctrl-btn reel-mute-btn" id="reelMute" aria-label="Toggle mute">
+          <svg viewBox="0 0 24 24" id="muteIcon">
+            <path d="M11 5 6 9H2v6h4l5 4V5ZM19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+          </svg>
+        </button>
+        <button class="reel-ctrl-btn reel-ctrl-next" id="reelNext" aria-label="Next reel">
+          <svg viewBox="0 0 24 24">
+            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+              stroke-linejoin="round" fill="none" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Dot pagination -->
+      <div class="reels-dots" id="reelsDots" role="tablist" aria-label="Reel navigation">
+        <button class="reel-dot" data-dot="0" role="tab" aria-label="Reel 1"></button>
+        <button class="reel-dot" data-dot="1" role="tab" aria-label="Reel 2"></button>
+        <button class="reel-dot active" data-dot="2" role="tab" aria-label="Reel 3" aria-selected="true"></button>
+        <button class="reel-dot" data-dot="3" role="tab" aria-label="Reel 4"></button>
+        <button class="reel-dot" data-dot="4" role="tab" aria-label="Reel 5"></button>
+      </div>
+
+    </section>
+    <!-- ===== /VIDEO REELS SECTION ===== -->
+
+    <!-- ===== VIDEO LIGHTBOX OVERLAY ===== -->
+    <div class="video-overlay" id="videoOverlay" role="dialog" aria-modal="true">
+      <div class="video-overlay-inner">
+        <button class="video-close" id="videoClose" aria-label="Close advertisement video">
+          <svg viewBox="0 0 24 24">
+            <path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              fill="none" />
+          </svg>
+        </button>
+        <div class="video-player-wrap">
+          <video id="overlayVideo" playsinline preload="auto">
+            Your browser does not support the video tag.
+          </video>
+          <!-- ADVERTISEMENT OVERLAYS -->
+          <div class="video-ad-info">
+            <span class="ad-tag">Advertisement</span>
+            <h2 class="ad-title">THE GRAND MIST</h2>
+            <p class="ad-desc">Experience eco-luxury in the heart of nature.</p>
+            <a href="#booking" class="ad-cta btn btn-primary">Book Your Sanctuary</a>
           </div>
         </div>
       </div>
-      <!-- ===== /VIDEO LIGHTBOX OVERLAY ===== -->
+    </div>
+    <!-- ===== /VIDEO LIGHTBOX OVERLAY ===== -->
 
 
-      <!-- ===== GALLERY SECTION ===== -->
-      <section class="section gallery-section" id="gallery">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow green">Captured Moments</p>
-            <h2>Photo Gallery</h2>
-            <p class="gallery-sub">Glimpses of nature, luxury, and serenity at The Grand Mist</p>
+    <!-- ===== GALLERY SECTION ===== -->
+    <section class="section gallery-section" id="gallery">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow green">Captured Moments</p>
+          <h2>Photo Gallery</h2>
+          <p class="gallery-sub">Glimpses of nature, luxury, and serenity at The Grand Mist</p>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- Main Features -->
+          <div class="photo-item photo-large">
+            <img src="Assets/home.JPG" alt="Resort aerial view" width="800" height="600" loading="lazy" decoding="async" />
           </div>
 
-          <div class="gallery-grid">
-            <!-- Main Features -->
-            <div class="photo-item photo-large">
-              <img src="Assets/home.JPG" alt="Resort aerial view" loading="lazy" />
-            </div>
-            
-            <!-- Outdoor / Grounds -->
-            <div class="photo-item">
-              <img src="Assets/OUTDOOR/PIC -18.webp" alt="Outdoor View" loading="lazy" />
-            </div>
-            <div class="photo-item photo-tall">
-              <img src="Assets/OUTDOOR/PIC -19.webp" alt="Resort Grounds" loading="lazy" />
-            </div>
-            <div class="photo-item">
-              <img src="Assets/OUTDOOR/PIC -20.webp" alt="Outdoor Scenery" loading="lazy" />
-            </div>
-            <div class="photo-item photo-wide">
-              <img src="Assets/OUTDOOR/PIC -24.webp" alt="Resort Exterior" loading="lazy" />
-            </div>
-            <div class="photo-item photo-tall">
-              <img src="Assets/OUTDOOR/PIC -25.webp" alt="Resort View" loading="lazy" />
-            </div>
-            <div class="photo-item photo-wide">
-              <img src="Assets/OUTDOOR/PIC -26.webp" alt="Garden Vista" loading="lazy" />
-            </div>
+          <!-- Outdoor / Grounds -->
+          <div class="photo-item">
+            <img src="Assets/OUTDOOR/PIC -18.webp" alt="Outdoor View" width="400" height="300" loading="lazy" decoding="async" />
+          </div>
+          <div class="photo-item photo-tall">
+            <img src="Assets/OUTDOOR/PIC -19.webp" alt="Resort Grounds" width="400" height="600" loading="lazy" decoding="async" />
+          </div>
+          <div class="photo-item">
+            <img src="Assets/OUTDOOR/PIC -20.webp" alt="Outdoor Scenery" width="400" height="300" loading="lazy" decoding="async" />
+          </div>
+          <div class="photo-item photo-wide">
+            <img src="Assets/OUTDOOR/PIC -24.webp" alt="Resort Exterior" width="800" height="400" loading="lazy" decoding="async" />
+          </div>
+          <div class="photo-item photo-tall">
+            <img src="Assets/OUTDOOR/PIC -25.webp" alt="Resort View" width="400" height="600" loading="lazy" decoding="async" />
+          </div>
+          <div class="photo-item photo-wide">
+            <img src="Assets/OUTDOOR/PIC -26.webp" alt="Garden Vista" width="800" height="400" loading="lazy" decoding="async" />
+          </div>
 
-            <!-- Bathroom / Luxury -->
-            <div class="photo-item">
-              <img src="Assets/BATHROOM/PIC -21.webp" alt="Bathroom Interior" loading="lazy" />
-            </div>
-            <div class="photo-item photo-tall">
-              <img src="Assets/BATHROOM/PIC -22.webp" alt="Modern Bathroom" loading="lazy" />
-            </div>
+          <!-- Bathroom / Luxury -->
+          <div class="photo-item">
+            <img src="Assets/BATHROOM/PIC -21.webp" alt="Bathroom Interior" width="400" height="300" loading="lazy" decoding="async" />
+          </div>
+          <div class="photo-item photo-tall">
+            <img src="Assets/BATHROOM/PIC -22.webp" alt="Modern Bathroom" width="400" height="600" loading="lazy" decoding="async" />
+          </div>
 
-            <!-- Kitchen / Dining -->
-            <div class="photo-item photo-wide">
-              <img src="Assets/KITCHEN/PIC -15.webp" alt="Kitchen Space" loading="lazy" />
-            </div>
-            <div class="photo-item">
-              <img src="Assets/KITCHEN/PIC -16.webp" alt="Dining Area" loading="lazy" />
-            </div>
-            <div class="photo-item photo-tall">
-              <img src="Assets/KITCHEN/PIC -17.webp" alt="Kitchen Details" loading="lazy" />
-            </div>
-            <div class="photo-item">
-              <img src="Assets/KITCHEN/PIC -23.webp" alt="Food Preparation Area" loading="lazy" />
-            </div>
+          <!-- Kitchen / Dining -->
+          <div class="photo-item photo-wide">
+            <img src="Assets/KITCHEN/PIC -15.webp" alt="Kitchen Space" width="800" height="400" loading="lazy" decoding="async" />
+          </div>
+          <div class="photo-item">
+            <img src="Assets/KITCHEN/PIC -16.webp" alt="Dining Area" width="400" height="300" loading="lazy" decoding="async" />
+          </div>
+          <div class="photo-item photo-tall">
+            <img src="Assets/KITCHEN/PIC -17.webp" alt="Kitchen Details" width="400" height="600" loading="lazy" decoding="async" />
+          </div>
+          <div class="photo-item">
+            <img src="Assets/KITCHEN/PIC -23.webp" alt="Food Preparation Area" width="400" height="300" loading="lazy" decoding="async" />
+          </div>
 
-            <!-- Garden / Nature -->
-            <div class="photo-item photo-tall">
-              <img src="Assets/GARDEN/PIC -27.webp" alt="Lush Garden" loading="lazy" />
-            </div>
-            <div class="photo-item">
-              <img src="Assets/GARDEN/PIC -28.webp" alt="Garden Pathway" loading="lazy" />
-            </div>
-            <div class="photo-item photo-wide">
-              <img src="Assets/GARDEN/PIC -29.webp" alt="Garden View" loading="lazy" />
-            </div>
+          <!-- Garden / Nature -->
+          <div class="photo-item photo-tall">
+            <img src="Assets/GARDEN/PIC -27.webp" alt="Lush Garden" width="400" height="600" loading="lazy" decoding="async" />
+          </div>
+          <div class="photo-item">
+            <img src="Assets/GARDEN/PIC -28.webp" alt="Garden Pathway" width="400" height="300" loading="lazy" decoding="async" />
+          </div>
+          <div class="photo-item photo-wide">
+            <img src="Assets/GARDEN/PIC -29.webp" alt="Garden View" width="800" height="400" loading="lazy" decoding="async" />
+          </div>
 
-            <!-- Others / Misc -->
-            <div class="photo-item">
-              <img src="Assets/OTHERS/PIC -30.webp" alt="Resort Detail" loading="lazy" />
+          <!-- Others / Misc -->
+          <div class="photo-item">
+            <img src="Assets/OTHERS/PIC -30.webp" alt="Resort Detail" width="400" height="300" loading="lazy" decoding="async" />
+          </div>
+          <div class="photo-item photo-wide">
+            <img src="Assets/OTHERS/PIC -36.webp" alt="Resort View" width="800" height="400" loading="lazy" decoding="async" />
+          </div>
+          <div class="photo-item photo-tall">
+            <img src="Assets/OTHERS/PIC -7.webp" alt="Kodai Mist" width="400" height="600" loading="lazy" decoding="async" />
+          </div>
+          <div class="photo-item">
+            <img src="Assets/OTHERS/PIC -37.webp" alt="Serene Morning" width="400" height="300" loading="lazy" decoding="async" />
+          </div>
+          <div class="photo-item">
+            <img src="Assets/OTHERS/PIC -38.webp" alt="Cloudy Kodai" width="400" height="300" loading="lazy" decoding="async" />
+          </div>
+          <div class="photo-item photo-wide">
+            <img src="Assets/OTHERS/PIC -39.webp" alt="Mountain Pass" width="800" height="400" loading="lazy" decoding="async" />
+          </div>
+          <div class="photo-item">
+            <img src="Assets/OTHERS/PIC -40.webp" alt="Resort Ambiance" width="400" height="300" loading="lazy" decoding="async" />
+          </div>
+          <div class="photo-item photo-wide">
+            <img src="Assets/OTHERS/PIC -41.webp" alt="Valley Vista" width="800" height="400" loading="lazy" decoding="async" />
+          </div>
+          <div class="photo-item">
+            <img src="Assets/OTHERS/PIC -42.webp" alt="Green Hills" width="400" height="300" loading="lazy" decoding="async" />
+          </div>
+          <!-- More Moments -->
+          <div class="photo-item">
+            <img src="Assets/OTHERS/PIC -43.webp" alt="Road in Kodai" width="400" height="300" loading="lazy" decoding="async" />
+          </div>
+          <div class="photo-item">
+            <img src="Assets/OTHERS/PIC -44.webp" alt="Mist covered hills" width="400" height="300" loading="lazy" decoding="async" />
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!-- ===== /GALLERY SECTION ===== -->
+
+    <!-- ===== VIDEO GALLERY SECTION (ADS) ===== -->
+    <section class="section video-gallery-section" id="video-gallery">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow green">Resort Cinema</p>
+          <h2>Video Gallery</h2>
+          <p class="gallery-sub">Immersive long-form advertisements of The Grand Mist</p>
+        </div>
+
+        <div class="video-grid">
+          <!-- Video 1 -->
+          <div class="video-card" data-video="https://cdn.pixabay.com/video/2020/09/20/50531-462310651_tiny.mp4">
+            <div class="video-thumb">
+              <img src="Assets/ROOM 2/PIC -13.webp" alt="Resort Aerial Ad" loading="lazy" />
+              <div class="video-duration">2:15</div>
+              <button class="video-play-overlay" aria-label="Play Resort Aerial Ad">
+                <svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7L8 5Z" fill="currentColor" />
+                </svg>
+              </button>
             </div>
-            <div class="photo-item photo-wide">
-              <img src="Assets/OTHERS/PIC -36.webp" alt="Resort View" loading="lazy" />
+            <div class="video-card-body">
+              <h3>The Grand Experience</h3>
+              <p>A cinematic journey through our lush sanctuary.</p>
             </div>
-            <div class="photo-item photo-tall">
-              <img src="Assets/OTHERS/PIC -7.webp" alt="Kodai Mist" loading="lazy" />
+          </div>
+
+          <!-- Video 2 -->
+          <div class="video-card" data-video="https://cdn.pixabay.com/video/2021/04/12/70874-538054425_tiny.mp4">
+            <div class="video-thumb">
+              <img src="Assets/ROOM 2/PIC -14.webp" alt="Luxury Wellness Ad" loading="lazy" />
+              <div class="video-duration">1:45</div>
+              <button class="video-play-overlay" aria-label="Play Luxury Wellness Ad">
+                <svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7L8 5Z" fill="currentColor" />
+                </svg>
+              </button>
             </div>
-            <div class="photo-item">
-              <img src="Assets/OTHERS/PIC -37.webp" alt="Serene Morning" loading="lazy" />
-            </div>
-            <div class="photo-item">
-              <img src="Assets/OTHERS/PIC -38.webp" alt="Cloudy Kodai" loading="lazy" />
-            </div>
-            <div class="photo-item photo-wide">
-              <img src="Assets/OTHERS/PIC -39.webp" alt="Mountain Pass" loading="lazy" />
-            </div>
-            <div class="photo-item">
-              <img src="Assets/OTHERS/PIC -40.webp" alt="Resort Ambiance" loading="lazy" />
-            </div>
-            <div class="photo-item photo-wide">
-              <img src="Assets/OTHERS/PIC -41.webp" alt="Valley Vista" loading="lazy" />
-            </div>
-            <div class="photo-item">
-              <img src="Assets/OTHERS/PIC -42.webp" alt="Green Hills" loading="lazy" />
-            </div>
-            <!-- More Moments -->
-            <div class="photo-item">
-              <img src="Assets/OTHERS/PIC -43.webp" alt="Road in Kodai" loading="lazy" />
-            </div>
-            <div class="photo-item">
-              <img src="Assets/OTHERS/PIC -44.webp" alt="Mist covered hills" loading="lazy" />
-            </div>
+            <div class="video-card-body">
+              <h3>Wellness & Serenity</h3>
+              <p>Discover our world-class spa and infinity pool.</p>
             </div>
           </div>
         </div>
-      </section>
-      <!-- ===== /GALLERY SECTION ===== -->
+      </div>
+    </section>
+    <!-- ===== /VIDEO GALLERY SECTION ===== -->
 
-      <!-- ===== VIDEO GALLERY SECTION (ADS) ===== -->
-      <section class="section video-gallery-section" id="video-gallery">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow green">Resort Cinema</p>
-            <h2>Video Gallery</h2>
-            <p class="gallery-sub">Immersive long-form advertisements of The Grand Mist</p>
-          </div>
-
-          <div class="video-grid">
-            <!-- Video 1 -->
-            <div class="video-card" data-video="https://cdn.pixabay.com/video/2020/09/20/50531-462310651_tiny.mp4">
-              <div class="video-thumb">
-                <img src="Assets/ROOM 2/PIC -13.webp"
-                  alt="Resort Aerial Ad" loading="lazy" />
-                <div class="video-duration">2:15</div>
-                <button class="video-play-overlay" aria-label="Play Resort Aerial Ad">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7L8 5Z" fill="currentColor" />
-                  </svg>
-                </button>
-              </div>
-              <div class="video-card-body">
-                <h3>The Grand Experience</h3>
-                <p>A cinematic journey through our lush sanctuary.</p>
-              </div>
-            </div>
-
-            <!-- Video 2 -->
-            <div class="video-card" data-video="https://cdn.pixabay.com/video/2021/04/12/70874-538054425_tiny.mp4">
-              <div class="video-thumb">
-                <img src="Assets/ROOM 2/PIC -14.webp"
-                  alt="Luxury Wellness Ad" loading="lazy" />
-                <div class="video-duration">1:45</div>
-                <button class="video-play-overlay" aria-label="Play Luxury Wellness Ad">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7L8 5Z" fill="currentColor" />
-                  </svg>
-                </button>
-              </div>
-              <div class="video-card-body">
-                <h3>Wellness & Serenity</h3>
-                <p>Discover our world-class spa and infinity pool.</p>
-              </div>
-            </div>
-          </div>
+    <!-- ===== REVIEWS ===== -->
+    <section class="section reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow green">Guest Stories</p>
+          <h2>What Our Guests Are Saying</h2>
+          <p class="reviews-sub">Real experiences from travellers who stayed with us</p>
         </div>
-      </section>
-      <!-- ===== /VIDEO GALLERY SECTION ===== -->
+      </div>
 
-      <!-- ===== REVIEWS ===== -->
-      <section class="section reviews-section" id="reviews">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow green">Guest Stories</p>
-            <h2>What Our Guests Are Saying</h2>
-            <p class="reviews-sub">Real experiences from travellers who stayed with us</p>
-          </div>
-        </div>
-
-        <div class="reviews-ticker" aria-label="Guest reviews carousel">
-          <div class="reviews-track" id="reviewsTrack">
-            <!-- <article class="review-card">
+      <div class="reviews-ticker" aria-label="Guest reviews carousel">
+        <div class="reviews-track" id="reviewsTrack">
+          <!-- <article class="review-card">
             <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <p class="review-text">&ldquo;The Private Pool Villa was absolutely breathtaking. Waking up to misty hills
               with chai in the private pool &mdash; life doesn&apos;t get better than this.&rdquo;</p>
@@ -952,7 +997,7 @@
                   Villa</span></div>
             </div>
           </article> -->
-            <!-- <article class="review-card">
+          <!-- <article class="review-card">
             <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <p class="review-text">&ldquo;Impeccable service, lush green surroundings and the most serene ambiance. A
               perfect anniversary retreat. We&apos;ll be back every year!&rdquo;</p>
@@ -962,7 +1007,7 @@
                   Valley View Suite</span></div>
             </div>
           </article> -->
-            <!-- <article class="review-card">
+          <!-- <article class="review-card">
             <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
             <p class="review-text">&ldquo;The garden suite is a dream &mdash; the rainfall shower and private deck made
               every morning magical. Staff was warm and attentive throughout.&rdquo;</p>
@@ -972,7 +1017,7 @@
                   Suite</span></div>
             </div>
           </article> -->
-            <!-- <article class="review-card">
+          <!-- <article class="review-card">
             <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <p class="review-text">&ldquo;Booked on WhatsApp and got confirmation in under 5 minutes. The entire
               experience from check-in to check-out was flawless. Pure luxury in nature&apos;s lap.&rdquo;</p>
@@ -982,7 +1027,7 @@
                   Villa</span></div>
             </div>
           </article> -->
-            <!-- <article class="review-card">
+          <!-- <article class="review-card">
             <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <p class="review-text">&ldquo;The infinity pool at sunset is a moment I will carry forever. The resort
               exceeded every expectation &mdash; a holistic retreat that nourishes the soul.&rdquo;</p>
@@ -992,7 +1037,7 @@
                   View Suite</span></div>
             </div>
           </article> -->
-            <!-- <article class="review-card">
+          <!-- <article class="review-card">
             <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <p class="review-text">&ldquo;Our family trip was one for the books. Kids loved the natural surroundings,
               adults loved the spa and pool. Truly a complete resort for every kind of guest.&rdquo;</p>
@@ -1002,7 +1047,7 @@
                   Suite</span></div>
             </div>
           </article> -->
-            <!-- <article class="review-card">
+          <!-- <article class="review-card">
             <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
             <p class="review-text">&ldquo;A beautiful escape from city madness. The early morning nature walk arranged
               by the concierge was unexpectedly the highlight of our trip. Thoughtful touches.&rdquo;</p>
@@ -1011,8 +1056,8 @@
               <div><span class="reviewer-name">Ananya Pillai</span><span class="review-meta">Kochi &middot; Garden
                   Suite</span></div>
             </div> -->
-            <!-- </article> -->
-            <!-- <article class="review-card">
+          <!-- </article> -->
+          <!-- <article class="review-card">
             <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <p class="review-text">&ldquo;From the moment we arrived, we felt like royalty. The private butler, curated
               meals and breathtaking valley views made this the best vacation of our lives.&rdquo;</p>
@@ -1022,44 +1067,44 @@
                   &middot; Pool Villa</span></div>
             </div>
           </article> -->
-          </div>
         </div>
+      </div>
 
-        <div class="reviews-rating-bar">
-          <div class="rating-badge">
-            <span class="rating-score">4.0</span>
-            <div class="rating-stars-large">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <span class="rating-label">Based on 200+ verified reviews</span>
-          </div>
+      <div class="reviews-rating-bar">
+        <div class="rating-badge">
+          <span class="rating-score">4.0</span>
+          <div class="rating-stars-large">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <span class="rating-label">Based on 200+ verified reviews</span>
         </div>
-      </section>
-      <!-- ===== /REVIEWS ===== -->
+      </div>
+    </section>
+    <!-- ===== /REVIEWS ===== -->
 
-      <section class="section booking" id="booking">
-        <div class="container booking-wrap">
-          <div>
-            <p class="eyebrow green">Instant Booking</p>
-            <h2>Reserve Your Luxury Stay on WhatsApp</h2>
-            <p>Share your dates and number of guests. Our team replies quickly with room options, offers, and custom
-              packages.</p>
-          </div>
-          <div class="booking-card">
-            <p>Fast confirmation in minutes</p>
-            <a class="btn btn-primary full"
-              href="https://wa.me/919626597705?text=Hi%2C%20I%20want%20to%20book%20The%20Grand%20Mist.%20Please%20share%20availability."
-              target="_blank" rel="noopener noreferrer">
-              <span class="wa-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M20 4a10 10 0 0 0-16.9 9.3L2 22l8.9-1.1A10 10 0 1 0 20 4Zm-8 15a8 8 0 0 1-4.1-1.1l-.3-.2-3.3.4.4-3.2-.2-.3A8 8 0 1 1 12 19Zm4.6-6.2c-.2-.1-1.3-.6-1.5-.7s-.3-.1-.5.1-.6.7-.8.9-.3.2-.5.1a6.5 6.5 0 0 1-1.9-1.2 7.3 7.3 0 0 1-1.3-1.6c-.1-.2 0-.4.1-.5.1-.1.2-.3.4-.4.1-.1.2-.2.2-.4.1-.1 0-.3 0-.4 0-.1-.5-1.2-.7-1.7-.2-.4-.3-.4-.5-.4h-.4c-.1 0-.4.1-.6.3s-.8.8-.8 1.9.8 2.1 1 2.3c.1.2 1.6 2.4 3.9 3.4.6.3 1 .5 1.3.6.6.2 1.1.2 1.5.1.5-.1 1.3-.6 1.5-1.1.2-.5.2-1 .1-1.1-.1 0-.2-.1-.4-.2Z" />
-                </svg>
-              </span>
-              Chat on WhatsApp
-            </a>
-            <small>+91 9626597705</small>
-          </div>
+    <section class="section booking" id="booking">
+      <div class="container booking-wrap">
+        <div>
+          <p class="eyebrow green">Instant Booking</p>
+          <h2>Reserve Your Luxury Stay on WhatsApp</h2>
+          <p>Share your dates and number of guests. Our team replies quickly with room options, offers, and custom
+            packages.</p>
         </div>
-      </section>
+        <div class="booking-card">
+          <p>Fast confirmation in minutes</p>
+          <a class="btn btn-primary full"
+            href="https://wa.me/919626597705?text=Hi%2C%20I%20want%20to%20book%20The%20Grand%20Mist.%20Please%20share%20availability."
+            target="_blank" rel="noopener noreferrer">
+            <span class="wa-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M20 4a10 10 0 0 0-16.9 9.3L2 22l8.9-1.1A10 10 0 1 0 20 4Zm-8 15a8 8 0 0 1-4.1-1.1l-.3-.2-3.3.4.4-3.2-.2-.3A8 8 0 1 1 12 19Zm4.6-6.2c-.2-.1-1.3-.6-1.5-.7s-.3-.1-.5.1-.6.7-.8.9-.3.2-.5.1a6.5 6.5 0 0 1-1.9-1.2 7.3 7.3 0 0 1-1.3-1.6c-.1-.2 0-.4.1-.5.1-.1.2-.3.4-.4.1-.1.2-.2.2-.4.1-.1 0-.3 0-.4 0-.1-.5-1.2-.7-1.7-.2-.4-.3-.4-.5-.4h-.4c-.1 0-.4.1-.6.3s-.8.8-.8 1.9.8 2.1 1 2.3c.1.2 1.6 2.4 3.9 3.4.6.3 1 .5 1.3.6.6.2 1.1.2 1.5.1.5-.1 1.3-.6 1.5-1.1.2-.5.2-1 .1-1.1-.1 0-.2-.1-.4-.2Z" />
+              </svg>
+            </span>
+            Chat on WhatsApp
+          </a>
+          <small>+91 9626597705</small>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -1072,7 +1117,9 @@
         <!-- Col 1: Brand -->
         <div class="footer-col footer-brand-col">
           <a class="footer-brand" href="#home">
-            <span class="brand-mark">GM</span>
+            <div class="brand-mark">
+              <img src="Assets/greenlogo.png" alt="The Grand Mist Logo">
+            </div>
             <span class="footer-brand-name">The Grand Mist</span>
           </a>
           <p class="footer-tagline">A sanctuary of green luxury. Where nature meets elegance — crafted for those who

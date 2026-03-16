@@ -97,16 +97,19 @@ a {
 }
 
 .brand-mark {
-  width: 2.3rem;
-  height: 2.3rem;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--primary);
-  color: #fff;
-  font-weight: 700;
-  font-size: 0.85rem;
-  box-shadow: 0 2px 8px rgba(31, 122, 77, 0.4);
+  height: 2.2rem;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .brand-text {
@@ -746,71 +749,7 @@ a {
 }
 
 
-/* Gallery Collage */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 250px;
-  gap: 1.5rem;
-  margin-top: 2.5rem;
-}
 
-.photo-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--radius-lg);
-  background: var(--bg-alt);
-  cursor: pointer;
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow 0.3s ease;
-}
-
-.photo-item:hover {
-  box-shadow: var(--shadow-md);
-  z-index: 2;
-}
-
-.photo-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.photo-item:hover img {
-  transform: scale(1.08);
-}
-
-/* Collage Spans */
-.photo-large {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.photo-tall {
-  grid-row: span 2;
-}
-
-.photo-wide {
-  grid-column: span 2;
-}
-
-@media (max-width: 1024px) {
-  .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 220px;
-    gap: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 180px;
-    gap: 0.8rem;
-  }
-}
 
 /* ── Responsive ── */
 @media (max-width: 760px) {
@@ -1097,9 +1036,10 @@ h2 {
 }
 
 .room-price {
+  font-family: "Manrope", sans-serif;
   font-weight: 800;
   color: var(--primary-dark);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
 }
 
 .room-price small {
@@ -1155,19 +1095,7 @@ h2 {
   transform: translateY(0) scale(1);
 }
 
-/* Scrollbar style */
-.room-modal::-webkit-scrollbar {
-  width: 6px;
-}
 
-.room-modal::-webkit-scrollbar-track {
-  background: #f0f9f2;
-}
-
-.room-modal::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 99px;
-}
 
 /* Close button */
 .modal-close {
@@ -1305,9 +1233,9 @@ h2 {
 }
 
 .modal-price {
-  font-family: "Playfair Display", serif;
-  font-size: 1.7rem;
-  font-weight: 700;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
   color: var(--primary-dark);
   line-height: 1.1;
 }
@@ -2290,6 +2218,7 @@ h2 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 250px;
+  grid-auto-flow: dense; /* Crucial: fills in holes automatically */
   gap: 1.2rem;
   margin-top: 3rem;
 }
@@ -2297,9 +2226,10 @@ h2 {
 .photo-item {
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* subtle shadow */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   position: relative;
-  background: var(--bg);
+  background: #f0f4f1; /* Placeholder color while loading */
+  cursor: pointer;
 }
 
 .photo-item img {
@@ -2358,7 +2288,6 @@ h2 {
     grid-column: span 2;
     grid-row: span 2;
   }
-  /* Remove tall/wide spans on extremely small screens to fit the 2-col layout better, or keep them to span 2 cols */
   .photo-tall {
     grid-column: span 1;
     grid-row: span 2;
@@ -2369,6 +2298,11 @@ h2 {
   }
   .photo-item {
     border-radius: var(--radius-md);
+  }
+  
+  /* Ensure no single-column items create massive gaps */
+  .photo-item:nth-child(odd):last-child {
+    grid-column: span 2;
   }
 }
 
