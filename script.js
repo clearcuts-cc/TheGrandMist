@@ -45,7 +45,7 @@
 
   if (!overlay || !modalContent) return;
 
-  const WA_NUMBER = "919626597705";
+  const WA_NUMBER = "919944033765";
 
   // WhatsApp icon path (reusable)
   const WA_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4a10 10 0 0 0-16.9 9.3L2 22l8.9-1.1A10 10 0 1 0 20 4Zm-8 15a8 8 0 0 1-4.1-1.1l-.3-.2-3.3.4.4-3.2-.2-.3A8 8 0 1 1 12 19Zm4.6-6.2c-.2-.1-1.3-.6-1.5-.7s-.3-.1-.5.1-.6.7-.8.9-.3.2-.5.1a6.5 6.5 0 0 1-1.9-1.2 7.3 7.3 0 0 1-1.3-1.6c-.1-.2 0-.4.1-.5.1-.1.2-.3.4-.4.1-.1.2-.2.2-.4.1-.1 0-.3 0-.4 0-.1-.5-1.2-.7-1.7-.2-.4-.3-.4-.5-.4h-.4c-.1 0-.4.1-.6.3s-.8.8-.8 1.9.8 2.1 1 2.3c.1.2 1.6 2.4 3.9 3.4.6.3 1 .5 1.3.6.6.2 1.1.2 1.5.1.5-.1 1.3-.6 1.5-1.1.2-.5.2-1 .1-1.1-.1 0-.2-.1-.4-.2Z"/></svg>`;
@@ -68,11 +68,11 @@
         <div class="modal-slider-track">
           <img class="modal-hero-img" src="${room.img}" alt="${room.name}" width="800" height="600" loading="lazy" decoding="async" />
           ${(room.extraImgs || [])
-            .map(
-              (img) =>
-                `<img class="modal-hero-img" src="${img}" alt="${room.name} details" width="800" height="600" loading="lazy" decoding="async" />`
-            )
-            .join("")}
+        .map(
+          (img) =>
+            `<img class="modal-hero-img" src="${img}" alt="${room.name} details" width="800" height="600" loading="lazy" decoding="async" />`
+        )
+        .join("")}
         </div>
         ${(room.extraImgs && room.extraImgs.length > 0) ? `
         <div class="modal-slider-dots">
