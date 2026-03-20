@@ -16,7 +16,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=1.1" />
 </head>
 
 <body>
@@ -805,6 +805,7 @@
           <video id="overlayVideo" playsinline preload="auto">
             Your browser does not support the video tag.
           </video>
+          <iframe id="overlayIframe" allow="autoplay; fullscreen" allowfullscreen style="display:none; width:100%; height:100%; border:none; border-radius:12px;"></iframe>
           <!-- ADVERTISEMENT OVERLAYS -->
           <div class="video-ad-info">
             <span class="ad-tag">Advertisement</span>
@@ -830,96 +831,123 @@
         <div class="gallery-grid">
           <!-- Main Features -->
           <div class="photo-item photo-large">
-            <img src="Assets/home.JPG" alt="Resort aerial view" width="800" height="600" loading="lazy" decoding="async" />
+            <img src="Assets/home.JPG" alt="Resort aerial view" width="800" height="600" loading="lazy"
+              decoding="async" />
           </div>
 
           <!-- Outdoor / Grounds -->
           <div class="photo-item">
-            <img src="Assets/OUTDOOR/PIC -18.webp" alt="Outdoor View" width="400" height="300" loading="lazy" decoding="async" />
+            <img src="Assets/OUTDOOR/PIC -18.webp" alt="Outdoor View" width="400" height="300" loading="lazy"
+              decoding="async" />
           </div>
           <div class="photo-item photo-tall">
-            <img src="Assets/OUTDOOR/PIC -19.webp" alt="Resort Grounds" width="400" height="600" loading="lazy" decoding="async" />
+            <img src="Assets/OUTDOOR/PIC -19.webp" alt="Resort Grounds" width="400" height="600" loading="lazy"
+              decoding="async" />
           </div>
           <div class="photo-item">
-            <img src="Assets/OUTDOOR/PIC -20.webp" alt="Outdoor Scenery" width="400" height="300" loading="lazy" decoding="async" />
+            <img src="Assets/OUTDOOR/PIC -20.webp" alt="Outdoor Scenery" width="400" height="300" loading="lazy"
+              decoding="async" />
           </div>
           <div class="photo-item photo-wide">
-            <img src="Assets/OUTDOOR/PIC -24.webp" alt="Resort Exterior" width="800" height="400" loading="lazy" decoding="async" />
+            <img src="Assets/OUTDOOR/PIC -24.webp" alt="Resort Exterior" width="800" height="400" loading="lazy"
+              decoding="async" />
           </div>
           <div class="photo-item photo-tall">
-            <img src="Assets/OUTDOOR/PIC -25.webp" alt="Resort View" width="400" height="600" loading="lazy" decoding="async" />
+            <img src="Assets/OUTDOOR/PIC -25.webp" alt="Resort View" width="400" height="600" loading="lazy"
+              decoding="async" />
           </div>
           <div class="photo-item photo-wide">
-            <img src="Assets/OUTDOOR/PIC -26.webp" alt="Garden Vista" width="800" height="400" loading="lazy" decoding="async" />
+            <img src="Assets/OUTDOOR/PIC -26.webp" alt="Garden Vista" width="800" height="400" loading="lazy"
+              decoding="async" />
           </div>
 
           <!-- Bathroom / Luxury -->
           <div class="photo-item">
-            <img src="Assets/BATHROOM/PIC -21.webp" alt="Bathroom Interior" width="400" height="300" loading="lazy" decoding="async" />
+            <img src="Assets/BATHROOM/PIC -21.webp" alt="Bathroom Interior" width="400" height="300" loading="lazy"
+              decoding="async" />
           </div>
           <div class="photo-item photo-tall">
-            <img src="Assets/BATHROOM/PIC -22.webp" alt="Modern Bathroom" width="400" height="600" loading="lazy" decoding="async" />
+            <img src="Assets/BATHROOM/PIC -22.webp" alt="Modern Bathroom" width="400" height="600" loading="lazy"
+              decoding="async" />
           </div>
 
           <!-- Kitchen / Dining -->
           <div class="photo-item photo-wide">
-            <img src="Assets/KITCHEN/PIC -15.webp" alt="Kitchen Space" width="800" height="400" loading="lazy" decoding="async" />
+            <img src="Assets/KITCHEN/PIC -15.webp" alt="Kitchen Space" width="800" height="400" loading="lazy"
+              decoding="async" />
           </div>
           <div class="photo-item">
-            <img src="Assets/KITCHEN/PIC -16.webp" alt="Dining Area" width="400" height="300" loading="lazy" decoding="async" />
+            <img src="Assets/KITCHEN/PIC -16.webp" alt="Dining Area" width="400" height="300" loading="lazy"
+              decoding="async" />
           </div>
           <div class="photo-item photo-tall">
-            <img src="Assets/KITCHEN/PIC -17.webp" alt="Kitchen Details" width="400" height="600" loading="lazy" decoding="async" />
+            <img src="Assets/KITCHEN/PIC -17.webp" alt="Kitchen Details" width="400" height="600" loading="lazy"
+              decoding="async" />
           </div>
           <div class="photo-item">
-            <img src="Assets/KITCHEN/PIC -23.webp" alt="Food Preparation Area" width="400" height="300" loading="lazy" decoding="async" />
+            <img src="Assets/KITCHEN/PIC -23.webp" alt="Food Preparation Area" width="400" height="300" loading="lazy"
+              decoding="async" />
           </div>
 
           <!-- Garden / Nature -->
           <div class="photo-item photo-tall">
-            <img src="Assets/GARDEN/PIC -27.webp" alt="Lush Garden" width="400" height="600" loading="lazy" decoding="async" />
+            <img src="Assets/GARDEN/PIC -27.webp" alt="Lush Garden" width="400" height="600" loading="lazy"
+              decoding="async" />
           </div>
           <div class="photo-item">
-            <img src="Assets/GARDEN/PIC -28.webp" alt="Garden Pathway" width="400" height="300" loading="lazy" decoding="async" />
+            <img src="Assets/GARDEN/PIC -28.webp" alt="Garden Pathway" width="400" height="300" loading="lazy"
+              decoding="async" />
           </div>
           <div class="photo-item photo-wide">
-            <img src="Assets/GARDEN/PIC -29.webp" alt="Garden View" width="800" height="400" loading="lazy" decoding="async" />
+            <img src="Assets/GARDEN/PIC -29.webp" alt="Garden View" width="800" height="400" loading="lazy"
+              decoding="async" />
           </div>
 
           <!-- Others / Misc -->
           <div class="photo-item">
-            <img src="Assets/OTHERS/PIC -30.webp" alt="Resort Detail" width="400" height="300" loading="lazy" decoding="async" />
+            <img src="Assets/OTHERS/PIC -30.webp" alt="Resort Detail" width="400" height="300" loading="lazy"
+              decoding="async" />
           </div>
           <div class="photo-item photo-wide">
-            <img src="Assets/OTHERS/PIC -36.webp" alt="Resort View" width="800" height="400" loading="lazy" decoding="async" />
+            <img src="Assets/OTHERS/PIC -36.webp" alt="Resort View" width="800" height="400" loading="lazy"
+              decoding="async" />
           </div>
           <div class="photo-item photo-tall">
-            <img src="Assets/OTHERS/PIC -7.webp" alt="Kodai Mist" width="400" height="600" loading="lazy" decoding="async" />
+            <img src="Assets/OTHERS/PIC -7.webp" alt="Kodai Mist" width="400" height="600" loading="lazy"
+              decoding="async" />
           </div>
           <div class="photo-item">
-            <img src="Assets/OTHERS/PIC -37.webp" alt="Serene Morning" width="400" height="300" loading="lazy" decoding="async" />
+            <img src="Assets/OTHERS/PIC -37.webp" alt="Serene Morning" width="400" height="300" loading="lazy"
+              decoding="async" />
           </div>
           <div class="photo-item">
-            <img src="Assets/OTHERS/PIC -38.webp" alt="Cloudy Kodai" width="400" height="300" loading="lazy" decoding="async" />
+            <img src="Assets/OTHERS/PIC -38.webp" alt="Cloudy Kodai" width="400" height="300" loading="lazy"
+              decoding="async" />
           </div>
           <div class="photo-item photo-wide">
-            <img src="Assets/OTHERS/PIC -39.webp" alt="Mountain Pass" width="800" height="400" loading="lazy" decoding="async" />
+            <img src="Assets/OTHERS/PIC -39.webp" alt="Mountain Pass" width="800" height="400" loading="lazy"
+              decoding="async" />
           </div>
           <div class="photo-item">
-            <img src="Assets/OTHERS/PIC -40.webp" alt="Resort Ambiance" width="400" height="300" loading="lazy" decoding="async" />
+            <img src="Assets/OTHERS/PIC -40.webp" alt="Resort Ambiance" width="400" height="300" loading="lazy"
+              decoding="async" />
           </div>
           <div class="photo-item photo-wide">
-            <img src="Assets/OTHERS/PIC -41.webp" alt="Valley Vista" width="800" height="400" loading="lazy" decoding="async" />
+            <img src="Assets/OTHERS/PIC -41.webp" alt="Valley Vista" width="800" height="400" loading="lazy"
+              decoding="async" />
           </div>
           <div class="photo-item">
-            <img src="Assets/OTHERS/PIC -42.webp" alt="Green Hills" width="400" height="300" loading="lazy" decoding="async" />
+            <img src="Assets/OTHERS/PIC -42.webp" alt="Green Hills" width="400" height="300" loading="lazy"
+              decoding="async" />
           </div>
           <!-- More Moments -->
           <div class="photo-item">
-            <img src="Assets/OTHERS/PIC -43.webp" alt="Road in Kodai" width="400" height="300" loading="lazy" decoding="async" />
+            <img src="Assets/OTHERS/PIC -43.webp" alt="Road in Kodai" width="400" height="300" loading="lazy"
+              decoding="async" />
           </div>
           <div class="photo-item">
-            <img src="Assets/OTHERS/PIC -44.webp" alt="Mist covered hills" width="400" height="300" loading="lazy" decoding="async" />
+            <img src="Assets/OTHERS/PIC -44.webp" alt="Mist covered hills" width="400" height="300" loading="lazy"
+              decoding="async" />
           </div>
         </div>
       </div>
@@ -938,36 +966,53 @@
 
         <div class="video-grid">
           <!-- Video 1 -->
-          <div class="video-card" data-video="https://cdn.pixabay.com/video/2020/09/20/50531-462310651_tiny.mp4">
+          <div class="video-card" data-video="https://drive.google.com/file/d/1rcsoSYAWVowK0-75dqn8iXym8-iQ0D_T/preview">
             <div class="video-thumb">
-              <img src="Assets/ROOM 2/PIC -13.webp" alt="Resort Aerial Ad" loading="lazy" />
-              <div class="video-duration">2:15</div>
-              <button class="video-play-overlay" aria-label="Play Resort Aerial Ad">
+              <img src="Assets/ROOM 2/PIC -13.webp" alt="Resort Aerial View" loading="lazy" />
+              <div class="video-duration">Full HD</div>
+              <button class="video-play-overlay" aria-label="Play Resort Video 1">
                 <svg viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7L8 5Z" fill="currentColor" />
                 </svg>
               </button>
             </div>
             <div class="video-card-body">
-              <h3>The Grand Experience</h3>
-              <p>A cinematic journey through our lush sanctuary.</p>
+              <h3>Mist Valley Journey</h3>
+              <p>Experience the magical morning mist at The Grand Mist.</p>
             </div>
           </div>
 
           <!-- Video 2 -->
-          <div class="video-card" data-video="https://cdn.pixabay.com/video/2021/04/12/70874-538054425_tiny.mp4">
+          <div class="video-card" data-video="https://drive.google.com/file/d/1HLR_Fia2l17lzBhoevrPzBVIZ4t6Yz1p/preview">
             <div class="video-thumb">
-              <img src="Assets/ROOM 2/PIC -14.webp" alt="Luxury Wellness Ad" loading="lazy" />
-              <div class="video-duration">1:45</div>
-              <button class="video-play-overlay" aria-label="Play Luxury Wellness Ad">
+              <img src="Assets/ROOM 2/PIC -14.webp" alt="Resort Ambiance" loading="lazy" />
+              <div class="video-duration">Full HD</div>
+              <button class="video-play-overlay" aria-label="Play Resort Video 2">
                 <svg viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7L8 5Z" fill="currentColor" />
                 </svg>
               </button>
             </div>
             <div class="video-card-body">
-              <h3>Wellness & Serenity</h3>
-              <p>Discover our world-class spa and infinity pool.</p>
+              <h3>Green Sanctuary</h3>
+              <p>A cinematic look at our lush surroundings and luxury suites.</p>
+            </div>
+          </div>
+
+          <!-- Video 3 -->
+          <div class="video-card" data-video="https://drive.google.com/file/d/1wyyR-AgjeB8tOseAj2Bm-_SE2KvfpR6x/preview">
+            <div class="video-thumb">
+              <img src="Assets/ROOM 2/PIC -15.webp" alt="Resort Serenity" loading="lazy" />
+              <div class="video-duration">Full HD</div>
+              <button class="video-play-overlay" aria-label="Play Resort Video 3">
+                <svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7L8 5Z" fill="currentColor" />
+                </svg>
+              </button>
+            </div>
+            <div class="video-card-body">
+              <h3>Pure Serenity</h3>
+              <p>Discover the quiet luxury that awaits you in Kodaikanal.</p>
             </div>
           </div>
         </div>
@@ -1231,7 +1276,18 @@
   </footer>
 
 
-  <script src="script.js"></script>
+  <a href="https://wa.me/919944033765?text=Hi%20The%20Grand%20Mist%2C%20I'd%20like%20to%20enquire%20about%20a%20booking." 
+     class="whatsapp-float" 
+     target="_blank" 
+     rel="noopener noreferrer"
+     aria-label="Contact us on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20 4a10 10 0 0 0-16.9 9.3L2 22l8.9-1.1A10 10 0 1 0 20 4Zm-8 15a8 8 0 0 1-4.1-1.1l-.3-.2-3.3.4.4-3.2-.2-.3A8 8 0 1 1 12 19Zm4.6-6.2c-.2-.1-1.3-.6-1.5-.7s-.3-.1-.5.1-.6.7-.8.9-.3.2-.5.1a6.5 6.5 0 0 1-1.9-1.2 7.3 7.3 0 0 1-1.3-1.6c-.1-.2 0-.4.1-.5.1-.1.2-.3.4-.4.1-.1.2-.2.2-.4.1-.1 0-.3 0-.4 0-.1-.5-1.2-.7-1.7-.2-.4-.3-.4-.5-.4h-.4c-.1 0-.4.1-.6.3s-.8.8-.8 1.9.8 2.1 1 2.3c.1.2 1.6 2.4 3.9 3.4.6.3 1 .5 1.3.6.6.2 1.1.2 1.5.1.5-.1 1.3-.6 1.5-1.1.2-.5.2-1 .1-1.1-.1 0-.2-.1-.4-.2Z"/>
+    </svg>
+    <span class="whatsapp-tooltip">Contact Us</span>
+  </a>
+
+  <script src="script.js?v=1.1"></script>
 </body>
 
 </html>

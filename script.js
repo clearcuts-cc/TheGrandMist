@@ -275,6 +275,7 @@
   // Video Overlay elements
   const videoOverlay = document.getElementById("videoOverlay");
   const overlayVideo = document.getElementById("overlayVideo");
+  const overlayIframe = document.getElementById("overlayIframe");
   const videoClose = document.getElementById("videoClose");
 
   if (!stage) return;
@@ -306,21 +307,58 @@
   }
 
   // --- Video Lightbox Logic ---
-  function openVideoLightbox(url) {
-    if (!videoOverlay || !overlayVideo) return;
-    overlayVideo.src = url;
-    overlayVideo.muted = false; // Advertisement should have sound if user explicitly clicks play
+  function openVideoLightbox(url, isLandscape = false) {
+    if (!videoOverlay) return;
+    const inner = videoOverlay.querySelector(".video-overlay-inner");
+
+    // Toggle Landscape class for widescreen Video Gallery
+    if (inner) {
+      if (isLandscape) inner.classList.add("landscape");
+      else inner.classList.remove("landscape");
+    }
+
+    const isDrive = url.includes("drive.google.com");
+
+    if (isDrive) {
+      if (overlayVideo) overlayVideo.style.display = "none";
+      if (overlayIframe) {
+        overlayIframe.style.display = "block";
+        overlayIframe.src = url;
+      }
+    } else {
+      if (overlayIframe) {
+        overlayIframe.style.display = "none";
+        overlayIframe.src = "";
+      }
+      if (overlayVideo) {
+        overlayVideo.style.display = "block";
+        overlayVideo.src = url;
+        overlayVideo.muted = false;
+        overlayVideo.play().catch(err => console.log("Playback blocked:", err));
+      }
+    }
+
     videoOverlay.classList.add("open");
-    overlayVideo.play().catch(err => console.log("Playback blocked:", err));
     document.body.style.overflow = "hidden";
     stopAuto();
   }
 
   function closeVideoLightbox() {
-    if (!videoOverlay || !overlayVideo) return;
+    if (!videoOverlay) return;
     videoOverlay.classList.remove("open");
-    overlayVideo.pause();
-    overlayVideo.src = "";
+    
+    // Reset classes
+    const inner = videoOverlay.querySelector(".video-overlay-inner");
+    if (inner) inner.classList.remove("landscape");
+
+    if (overlayVideo) {
+      overlayVideo.pause();
+      overlayVideo.src = "";
+    }
+    if (overlayIframe) {
+      overlayIframe.src = "";
+    }
+
     document.body.style.overflow = "";
     startAuto();
   }
@@ -339,7 +377,7 @@
       playBtn.addEventListener("click", (e) => {
         e.stopPropagation();
         const videoUrl = card.dataset.video;
-        if (videoUrl) openVideoLightbox(videoUrl);
+        if (videoUrl) openVideoLightbox(videoUrl, false); // Reels are vertical
       });
     }
   });
@@ -348,7 +386,7 @@
   galleryCards.forEach((card) => {
     card.addEventListener("click", () => {
       const videoUrl = card.dataset.video;
-      if (videoUrl) openVideoLightbox(videoUrl);
+      if (videoUrl) openVideoLightbox(videoUrl, true); // Gallery videos are landscape
     });
   });
 
