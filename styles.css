@@ -2786,3 +2786,93 @@ h2 {
     display: none;
   }
 }
+
+
+/* ─── Policy Modal ─── */
+.policy-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  padding: 1.5rem;
+}
+
+.policy-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.policy-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 15, 8, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.policy-modal-container {
+  position: relative;
+  background: #fff;
+  width: min(600px, 100%);
+  max-height: 85vh;
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  overflow-y: auto;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.4);
+  transform: translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: 2;
+}
+
+.policy-modal.open .policy-modal-container {
+  transform: translateY(0);
+}
+
+.policy-modal-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--muted);
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.policy-modal-close:hover {
+  color: var(--primary);
+}
+
+.policy-modal-content h2 {
+  font-family: "Playfair Display", serif;
+  color: var(--primary);
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--bg-alt);
+  padding-bottom: 0.8rem;
+}
+
+.policy-body p {
+  margin-bottom: 1rem;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.policy-body strong {
+  color: var(--primary-dark);
+}
+
+@media (max-width: 480px) {
+  .policy-modal-container {
+    padding: 1.8rem;
+    padding-top: 2.5rem;
+  }
+}

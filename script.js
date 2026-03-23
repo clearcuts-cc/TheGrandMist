@@ -278,10 +278,77 @@
   const overlayIframe = document.getElementById("overlayIframe");
   const videoClose = document.getElementById("videoClose");
 
+  const galleryCards = Array.from(document.querySelectorAll(".video-card"));
+
+  // --- Video Lightbox Logic ---
+  function openVideoLightbox(url, title = "The Grand Mist", desc = "", isLandscape = false) {
+    if (!videoOverlay || !overlayVideo || !overlayIframe) return;
+
+    // Reset visibility
+    overlayVideo.style.display = "none";
+    overlayVideo.src = "";
+    overlayIframe.style.display = "none";
+    overlayIframe.src = "";
+
+    const isDrive = url.includes("drive.google.com");
+
+    if (isDrive) {
+      overlayIframe.style.display = "block";
+      overlayIframe.src = url;
+    } else {
+      overlayVideo.style.display = "block";
+      overlayVideo.src = url;
+      overlayVideo.load();
+      overlayVideo.play().catch(() => { });
+    }
+
+    // Update text
+    const adTitle = videoOverlay.querySelector(".ad-title");
+    const adDesc = videoOverlay.querySelector(".ad-desc");
+    if (adTitle) adTitle.innerText = title;
+    if (adDesc) adDesc.innerText = desc;
+
+    // Toggle landscape mode
+    const inner = videoOverlay.querySelector(".video-overlay-inner");
+    if (inner) inner.classList.toggle("landscape", isLandscape);
+
+    videoOverlay.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeVideoLightbox() {
+    if (!videoOverlay) return;
+    videoOverlay.classList.remove("open");
+    if (overlayVideo) {
+      overlayVideo.pause();
+      overlayVideo.src = "";
+    }
+    if (overlayIframe) overlayIframe.src = "";
+    document.body.style.overflow = "";
+  }
+
+  if (videoClose) videoClose.addEventListener("click", closeVideoLightbox);
+  if (videoOverlay) {
+    videoOverlay.addEventListener("click", (e) => {
+      if (e.target === videoOverlay) closeVideoLightbox();
+    });
+  }
+
+  // Gallery Card Clicks
+  galleryCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const videoUrl = card.getAttribute("data-video");
+      if (videoUrl) {
+        const title = card.querySelector("h3")?.innerText || "The Grand Mist";
+        const desc = card.querySelector("p")?.innerText || "Experience nature's beauty.";
+        openVideoLightbox(videoUrl, title, desc, true); // true for landscape
+      }
+    });
+  });
+
   if (!stage) return;
 
   const cards = Array.from(stage.querySelectorAll(".reel-card"));
-  const galleryCards = Array.from(document.querySelectorAll(".video-card"));
   const dots = dotsWrap ? Array.from(dotsWrap.querySelectorAll(".reel-dot")) : [];
   const total = cards.length;
   let current = 2;
@@ -306,89 +373,23 @@
     });
   }
 
-  // --- Video Lightbox Logic ---
-  function openVideoLightbox(url, isLandscape = false) {
-    if (!videoOverlay) return;
-    const inner = videoOverlay.querySelector(".video-overlay-inner");
-
-    // Toggle Landscape class for widescreen Video Gallery
-    if (inner) {
-      if (isLandscape) inner.classList.add("landscape");
-      else inner.classList.remove("landscape");
-    }
-
-    const isDrive = url.includes("drive.google.com");
-
-    if (isDrive) {
-      if (overlayVideo) overlayVideo.style.display = "none";
-      if (overlayIframe) {
-        overlayIframe.style.display = "block";
-        overlayIframe.src = url;
+  // Bind play button clicks to open Lightbox (Pre-check if cards exist)
+  if (cards && cards.length > 0) {
+    cards.forEach((card) => {
+      const playBtn = card.querySelector(".reel-play-btn");
+      if (playBtn) {
+        playBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const videoUrl = card.dataset.video;
+          if (videoUrl) {
+            const title = card.querySelector("h3")?.innerText || "The Grand Mist";
+            const desc = card.querySelector("p")?.innerText || "Enjoy the view.";
+            openVideoLightbox(videoUrl, title, desc, false);
+          }
+        });
       }
-    } else {
-      if (overlayIframe) {
-        overlayIframe.style.display = "none";
-        overlayIframe.src = "";
-      }
-      if (overlayVideo) {
-        overlayVideo.style.display = "block";
-        overlayVideo.src = url;
-        overlayVideo.muted = false;
-        overlayVideo.play().catch(err => console.log("Playback blocked:", err));
-      }
-    }
-
-    videoOverlay.classList.add("open");
-    document.body.style.overflow = "hidden";
-    stopAuto();
-  }
-
-  function closeVideoLightbox() {
-    if (!videoOverlay) return;
-    videoOverlay.classList.remove("open");
-    
-    // Reset classes
-    const inner = videoOverlay.querySelector(".video-overlay-inner");
-    if (inner) inner.classList.remove("landscape");
-
-    if (overlayVideo) {
-      overlayVideo.pause();
-      overlayVideo.src = "";
-    }
-    if (overlayIframe) {
-      overlayIframe.src = "";
-    }
-
-    document.body.style.overflow = "";
-    startAuto();
-  }
-
-  if (videoClose) videoClose.addEventListener("click", closeVideoLightbox);
-  if (videoOverlay) {
-    videoOverlay.addEventListener("click", (e) => {
-      if (e.target === videoOverlay) closeVideoLightbox();
     });
   }
-
-  // Bind play button clicks to open Lightbox
-  cards.forEach((card) => {
-    const playBtn = card.querySelector(".reel-play-btn");
-    if (playBtn) {
-      playBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        const videoUrl = card.dataset.video;
-        if (videoUrl) openVideoLightbox(videoUrl, false); // Reels are vertical
-      });
-    }
-  });
-
-  // Bind gallery card clicks
-  galleryCards.forEach((card) => {
-    card.addEventListener("click", () => {
-      const videoUrl = card.dataset.video;
-      if (videoUrl) openVideoLightbox(videoUrl, true); // Gallery videos are landscape
-    });
-  });
 
   // --- Carousel Controls ---
   function goTo(index) {
@@ -546,4 +547,74 @@
       }, 800);
     }, 800);
   }, 1000);
+})();
+
+/**
+ * ===== POLICY MODAL LOGIC =====
+ */
+(function() {
+  const policyModal = document.getElementById("policyModal");
+  const policyContent = document.getElementById("policyContent");
+  const closePolicyBtn = document.getElementById("closePolicy");
+
+  const policies = {
+    privacy: `
+      <h2>Privacy Policy</h2>
+      <div class="policy-body">
+        <p><strong>Data Collection</strong>: We collect your name, phone number, and stay dates for booking purposes.</p>
+        <p><strong>Data Usage</strong>: Your information is used only to manage your reservation and improve our services.</p>
+        <p><strong>Confidentiality</strong>: We do not share your private details with any third parties.</p>
+        <p><strong>Your Rights</strong>: You can request to view or delete your data at any time after your stay.</p>
+      </div>
+    `,
+    terms: `
+      <h2>Terms of Stay</h2>
+      <div class="policy-body">
+        <p><strong>Timings</strong>: Standard Check-in is 12:00 PM and Check-out is 10:00 AM.</p>
+        <p><strong>ID Proof</strong>: A valid government-issued ID is required for all guests at check-in.</p>
+        <p><strong>Conduct</strong>: Smoking is restricted to outdoor areas only. Excessive noise is prohibited after 10:00 PM.</p>
+        <p><strong>Property Care</strong>: Guests are responsible for any damages caused to resort property during their stay.</p>
+      </div>
+    `,
+    cancellation: `
+      <h2>Cancellation Policy</h2>
+      <div class="policy-body">
+        <p><strong>15+ Days</strong>: Full refund for cancellations made 15 days or more before arrival.</p>
+        <p><strong>7-14 Days</strong>: 50% refund for cancellations made between 7 and 14 days before arrival.</p>
+        <p><strong>Lower notice</strong>: No refund for cancellations made within 7 days of arrival.</p>
+        <p><strong>Adjustments</strong>: Date changes are subject to availability and may involve a price difference.</p>
+      </div>
+    `
+  };
+
+  window.openPolicy = function(type) {
+    if (!policyModal || !policyContent) return;
+    
+    const content = policies[type];
+    if (content) {
+      policyContent.innerHTML = content;
+      policyModal.classList.add("open");
+      policyModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden"; // Prevent scroll
+    }
+  };
+
+  function closePolicyModal() {
+    if (!policyModal) return;
+    policyModal.classList.remove("open");
+    policyModal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = ""; // Enable scroll
+  }
+
+  if (closePolicyBtn) {
+    closePolicyBtn.addEventListener("click", closePolicyModal);
+  }
+
+  if (policyModal) {
+    policyModal.addEventListener("click", (e) => {
+      if (e.target === policyModal || e.target.classList.contains("policy-modal-overlay")) {
+        closePolicyModal();
+      }
+    });
+  }
 })();
