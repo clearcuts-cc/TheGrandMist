@@ -2718,14 +2718,28 @@ h2 {
   color: #fff;
   border-radius: 50%;
   border: none;
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
   z-index: 9999;
   transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28), box-shadow 0.3s ease;
-  animation: wa-pulse 2s infinite;
   text-decoration: none;
+  /* Reset potentially inherited styles */
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+/* The pulse is moved to a pseudo-element to avoid box-shadow issues on the main element in some browsers */
+.whatsapp-float::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: inherit;
+  z-index: -1;
+  opacity: 0.5;
+  animation: wa-pulse 2s infinite;
 }
 
 .whatsapp-float:hover {
@@ -2737,40 +2751,61 @@ h2 {
   width: 2.2rem;
   height: 2.2rem;
   fill: currentColor;
+  position: relative;
+  z-index: 2;
 }
 
 /* Tooltip */
 .whatsapp-tooltip {
   position: absolute;
-  right: 4.8rem;
-  background: rgba(0, 0, 0, 0.8);
+  right: calc(100% + 15px);
+  top: 50%;
+  transform: translateY(-50%) translateX(10px);
+  background: rgba(0, 0, 0, 0.85);
   color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  font-weight: 600;
+  padding: 0.6rem 1.1rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 700;
   white-space: nowrap;
   opacity: 0;
-  transform: translateX(10px);
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   pointer-events: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Tooltip arrow */
+.whatsapp-tooltip::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 6px solid rgba(0, 0, 0, 0.85);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
 }
 
 .whatsapp-float:hover .whatsapp-tooltip {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(-50%) translateX(0);
 }
 
 @keyframes wa-pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+    transform: scale(1);
+    opacity: 0.5;
   }
   70% {
-    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    transform: scale(1.6);
+    opacity: 0;
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    transform: scale(1);
+    opacity: 0;
   }
 }
 
