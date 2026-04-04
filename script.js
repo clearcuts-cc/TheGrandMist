@@ -574,6 +574,7 @@
         <p><strong>ID Proof</strong>: A valid government-issued ID is required for all guests at check-in.</p>
         <p><strong>Conduct</strong>: Smoking is restricted to outdoor areas only. Excessive noise is prohibited after 10:00 PM.</p>
         <p><strong>Property Care</strong>: Guests are responsible for any damages caused to resort property during their stay.</p>
+        <p><strong>Power & Safety</strong>: Power backup is provided by UPS. <strong>Warning:</strong> High voltage appliances are strictly NOT allowed.</p>
       </div>
     `,
     cancellation: `
